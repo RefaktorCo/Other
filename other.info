@@ -4,15 +4,17 @@ core = 7.x
 engine = phptemplate
 version = 1.0-ALPHA
 
+; Define theme stylesheets.
+stylesheets[all][] = css/font-awesome.min.css
+stylesheets[all][] = css/framework.css
 stylesheets[all][] = css/style.css
 
+; Define theme JS.
+scripts[] = js/plugins.js
+scripts[] = js/custom.js
 
-scripts[] = js/jquery.modernizr.js
-
-
-
+; Define theme regions.
 regions[content] = Content
-
 
 ; Define theme setting defaults.
 settings[sticky_header] = 1
