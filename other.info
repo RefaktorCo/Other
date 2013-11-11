@@ -1,0 +1,18 @@
+name = Other
+description = Responsive Drupal 7 Theme. 
+core = 7.x
+engine = phptemplate
+version = 1.0-ALPHA
+
+stylesheets[all][] = css/style.css
+
+
+scripts[] = js/jquery.modernizr.js
+
+
+
+regions[content] = Content
+
+
+; Define theme setting defaults.
+settings[sticky_header] = 1
