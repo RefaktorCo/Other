@@ -1,0 +1,11 @@
+.hidden {
+	display: none;
+}
+
+.region .content, .title {
+	padding-left: 20px;
+}
+
+.region .widget:first-child {
+  border-top: 1px solid #c5c5c5;
+}

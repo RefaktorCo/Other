@@ -8,13 +8,17 @@ version = 1.0-ALPHA
 stylesheets[all][] = css/font-awesome.min.css
 stylesheets[all][] = css/framework.css
 stylesheets[all][] = css/style.css
+stylesheets[all][] = css/drupal.css
 
 ; Define theme JS.
 scripts[] = js/plugins.js
 scripts[] = js/custom.js
 
 ; Define theme regions.
+
+regions[site_nav] = Site Navigation
 regions[content] = Content
+regions[sidebar] = Sidebar
 
 ; Define theme setting defaults.
 settings[sticky_header] = 1
