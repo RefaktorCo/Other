@@ -55,7 +55,7 @@
 	<?php endif; ?>
 </header>
 
-<section class="content">
+<section id="single-portfolio" class="content">
   
   <?php print render($page['content']); ?>
 </section>		

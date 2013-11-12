@@ -23,8 +23,16 @@ if ($prev != NULL) {
 	<?php endif; ?>
 </div>
 
+<?php if (render($content['field_portfolio_video'])): ?>
+<div class="video-container">
+	<?php print render($content['field_portfolio_video']); ?>
+</div>
+<?php endif; ?>
+
+<?php if (!render($content['field_portfolio_video'])): ?>
 <img src="<?php echo file_create_url($node->field_portfolio_slideshow['und'][0]['uri']); ?>" alt="" />
 <div class="clear break small"></div>
+<?php endif; ?>
 
 <article>
   <div class="video-title">

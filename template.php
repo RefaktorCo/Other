@@ -87,6 +87,50 @@ function other_menu_tree(&$variables) {
 }
 
 /**
+ * Overrides theme_field().
+ */
+function other_field($variables) {
+ 
+  $output = '';
+ 
+  // Render the label, if it's not hidden.
+  if (!$variables['label_hidden']) {
+    $output .= '<div class="field-label"' . $variables['title_attributes'] . '>' . $variables['label'] . ':&nbsp;</div>';  
+  }
+  
+  if ($variables['element']['#field_name'] == 'field_tags') {
+    // For tags, concatenate into a single, comma-delimitated string.
+    foreach ($variables['items'] as $delta => $item) {
+      $rendered_tags[] = drupal_render($item);
+    }
+    $output .= implode(', ', $rendered_tags);
+  }
+  
+  elseif ($variables['element']['#field_name'] == 'field_portfolio_video') {
+    // For tags, concatenate into a single, comma-delimitated string.
+    foreach ($variables['items'] as $delta => $item) {
+      $rendered_tags[] = drupal_render($item);
+    }
+    $output .= implode(' ', $rendered_tags);
+  }
+           
+  else {
+    $output .= '<div class="field-items"' . $variables['content_attributes'] . '>';
+    // Default rendering taken from theme_field().
+    foreach ($variables['items'] as $delta => $item) {
+      $classes = 'field-item ' . ($delta % 2 ? 'odd' : 'even');
+      $output .= '<div class="' . $classes . '"' . $variables['item_attributes'][$delta] . '>' . drupal_render($item) . '</div>';
+    }
+    $output .= '</div>';
+    // Render the top-level DIV.
+    $output = '<div class="' . $variables['classes'] . '"' . $variables['attributes'] . '>' . $output . '</div>';
+  }
+  
+  // Render the top-level DIV.
+  return $output;
+}
+
+/**
  * Create pagination function using prev_next API().
  */
 function other_pagination($node, $mode = 'n') {
