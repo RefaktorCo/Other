@@ -2,9 +2,16 @@
 	display: none;
 }
 
-.region .content, .title {
-	padding-left: 20px;
+.mobile-logo img {
+	height: 38px;
 }
+
+.region .content, .title {
+	padding-left: 0px;
+	opacity: 1;
+}
+
+
 
 .region .widget:first-child {
   border-top: 1px solid #c5c5c5;

@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Goodnex's HTML template.
+ * Other's HTML template.
  */
 ?>
 <!DOCTYPE html>
@@ -27,7 +27,6 @@ not-ie" lang="<?php print $language->language; ?>" dir="<?php print $language->d
 <?php other_user_css(); ?>  
 
 </head>
-
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
 <?php print $page_top; ?>
 <?php print $page; ?>

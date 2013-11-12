@@ -10,7 +10,7 @@ $('body').prepend('<div id="spinningSquaresG"><div id="spinningSquaresG_1" class
 jQuery(window).load(function($){
 
 	jQuery('body').find('#spinningSquaresG').remove();
-	jQuery('.content').animate({ 'opacity' : '1' }, 500);
+	jQuery('.content-wrapper').animate({ 'opacity' : '1' }, 500);
 	
 	jQuery('#vertical, #vertical ul').height( jQuery(window).height() );
 	
@@ -146,7 +146,7 @@ jQuery(document).ready(function($){
 	$('body').on('click', 'ul.grid li a, .gallery-wrapper a', function(){
 		var url = $(this).attr('href');
 		
-		$('.content').prepend('<div id="spinningSquaresG"><div id="spinningSquaresG_1" class="spinningSquaresG"></div><div id="spinningSquaresG_2" class="spinningSquaresG"></div><div id="spinningSquaresG_3" class="spinningSquaresG"></div><div id="spinningSquaresG_4" class="spinningSquaresG"></div><div id="spinningSquaresG_5" class="spinningSquaresG"></div><div id="spinningSquaresG_6" class="spinningSquaresG"></div><div id="spinningSquaresG_7" class="spinningSquaresG"></div><div id="spinningSquaresG_8" class="spinningSquaresG"></div></div>');
+		$('.content-wrapper').prepend('<div id="spinningSquaresG"><div id="spinningSquaresG_1" class="spinningSquaresG"></div><div id="spinningSquaresG_2" class="spinningSquaresG"></div><div id="spinningSquaresG_3" class="spinningSquaresG"></div><div id="spinningSquaresG_4" class="spinningSquaresG"></div><div id="spinningSquaresG_5" class="spinningSquaresG"></div><div id="spinningSquaresG_6" class="spinningSquaresG"></div><div id="spinningSquaresG_7" class="spinningSquaresG"></div><div id="spinningSquaresG_8" class="spinningSquaresG"></div></div>');
 		
 		$.get(url, function(data){
 			var filtered = jQuery(data).filter('section').removeClass('content');
@@ -175,7 +175,7 @@ jQuery(document).ready(function($){
 	$('body').on('click', '.post-nav', function(){
 		var url = $(this).attr('href');
 		
-		$('.content').prepend('<div id="spinningSquaresG"><div id="spinningSquaresG_1" class="spinningSquaresG"></div><div id="spinningSquaresG_2" class="spinningSquaresG"></div><div id="spinningSquaresG_3" class="spinningSquaresG"></div><div id="spinningSquaresG_4" class="spinningSquaresG"></div><div id="spinningSquaresG_5" class="spinningSquaresG"></div><div id="spinningSquaresG_6" class="spinningSquaresG"></div><div id="spinningSquaresG_7" class="spinningSquaresG"></div><div id="spinningSquaresG_8" class="spinningSquaresG"></div></div>');
+		$('.content-wrapper').prepend('<div id="spinningSquaresG"><div id="spinningSquaresG_1" class="spinningSquaresG"></div><div id="spinningSquaresG_2" class="spinningSquaresG"></div><div id="spinningSquaresG_3" class="spinningSquaresG"></div><div id="spinningSquaresG_4" class="spinningSquaresG"></div><div id="spinningSquaresG_5" class="spinningSquaresG"></div><div id="spinningSquaresG_6" class="spinningSquaresG"></div><div id="spinningSquaresG_7" class="spinningSquaresG"></div><div id="spinningSquaresG_8" class="spinningSquaresG"></div></div>');
 		
 		$.get(url, function(data){
 			var filtered = jQuery(data).filter('section').removeClass('content');
@@ -248,11 +248,11 @@ jQuery(document).ready(function($){
 'use strict';
 
 $('.view-background').click(function(){
-	if( $('.content').css('left') == '0px' ){
-		$('.content').animate({ 'left' : '-100%', 'opacity' : '0' });
+	if( $('.content-wrapper').css('left') == '0px' ){
+		$('.content-wrapper').animate({ 'left' : '-100%', 'opacity' : '0' });
 		$('.view-background').html('<i class="icon-eye-open icon-2x"></i>');
 	} else {
-		$('.content').animate({ 'left' : '0', 'opacity' : '1' });
+		$('.content-wrapper').animate({ 'left' : '0', 'opacity' : '1' });
 		$('.view-background').html('<i class="icon-eye-close icon-2x"></i>');
 	}
 	return false;

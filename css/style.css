@@ -350,7 +350,7 @@ header .widget.first {
 /*	HOMEPAGE STYLES
 /*-----------------------------------------------------------------------------------*/
 
-.content {
+.content-wrapper {
 	width: 100%; padding-left: 280px; position: relative; left: 0px; opacity: 0;
 }
 
@@ -441,7 +441,7 @@ article {
 	margin-bottom: 35px;
 }
 
-section.content .article-nav {
+section.content-wrapper .article-nav {
 	display: none;
 }
 
@@ -465,7 +465,7 @@ section {
 	max-width: 1000px; background: #fff; border-right: 1px solid #c5c5c5; border-bottom: 1px solid #c5c5c5;
 }
 
-section.content {
+section.content-wrapper {
 	max-width: 1280px;
 }
 
@@ -804,7 +804,7 @@ dl.accordion dt.active a {
 		left: 0;
 	}
 	
-	.content {
+	.content-wrapper {
 		padding: 40px 0 0 0;
 	}
 	

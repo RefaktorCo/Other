@@ -17,6 +17,26 @@ function other_process_page(&$variables) {
 }	
 
 /**
+ * Assign theme hook suggestions for custom templates.
+ */  
+function other_preprocess_page(&$vars, $hook) {
+  if (isset($vars['node'])) {
+    $suggest = "page__node__{$vars['node']->type}";
+    $vars['theme_hook_suggestions'][] = $suggest;
+  }
+  
+  $status = drupal_get_http_header("status");  
+  if($status == "404 Not Found") {      
+    $vars['theme_hook_suggestions'][] = 'page__404';
+  }
+  
+  if (arg(0) == 'taxonomy' && arg(1) == 'term' ){
+    $term = taxonomy_term_load(arg(2));
+    $vars['theme_hook_suggestions'][] = 'page--taxonomy--vocabulary--' . $term->vid;
+  }
+}
+
+/**
  * Overrides theme_preprocess_username().
  */
 function other_preprocess_username(&$vars) {
@@ -64,6 +84,45 @@ function other_menu_link(array $variables) {
  */
 function other_menu_tree(&$variables) {
   return '<ul>' . $variables['tree'] . '</ul>';
+}
+
+/**
+ * Create pagination function using prev_next API().
+ */
+function other_pagination($node, $mode = 'n') {
+  if (!function_exists('prev_next_nid')) {
+    return NULL;
+  }
+ 
+  switch($mode) {
+    case 'p':
+      $n_nid = prev_next_nid($node->nid, 'prev');
+      $link_text = "Previous post";
+    break;
+		
+    case 'n':
+      $n_nid = prev_next_nid($node->nid, 'next');
+      $link_text = "Next post";
+    break;
+		
+    default:
+    return NULL;
+  }
+ 
+  if ($n_nid) {
+    $n_node = '';
+    $n_node = node_load($n_nid);
+		
+    switch($n_node->type) {	
+      case 'portfolio': 
+        $id =  $n_node->nid; 
+      return $id; 
+      
+      case 'article': 
+        $html = l($link_text, 'node/'.$n_node->nid); 
+      return $html;
+    }
+  }
 }
 
 /**
