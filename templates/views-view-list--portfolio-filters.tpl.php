@@ -11,7 +11,7 @@
 ?>
 
 <ul class="filters">
-  <li><a href="*"><?php echo t('All'); ?></a></li>
+  <li><a href="" data-href="*"><?php echo t('All'); ?></a></li>
   <?php foreach ($rows as $id => $row): ?>
     <?php print $row; ?>
   <?php endforeach; ?>

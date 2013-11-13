@@ -87,9 +87,33 @@ function other_menu_tree(&$variables) {
 }
 
 /**
+ * Overrides theme_menu_local_tasks().
+ */
+function other_menu_local_tasks(&$variables) {
+  $output = '';
+
+  if (!empty($variables['primary'])) {
+    $variables['primary']['#prefix'] = '<h2 class="element-invisible">' . t('Primary tabs') . '</h2>';
+    $variables['primary']['#prefix'] .= '<ul class="etabs">';
+    $variables['primary']['#suffix'] = '</ul>';
+    $output .= drupal_render($variables['primary']);
+  }
+  if (!empty($variables['secondary'])) {
+    $variables['secondary']['#prefix'] = '<h2 class="element-invisible">' . t('Secondary tabs') . '</h2>';
+    $variables['secondary']['#prefix'] .= '<ul class="etabs">';
+    $variables['secondary']['#suffix'] = '</ul>';
+    $output .= drupal_render($variables['secondary']);
+  }
+
+  return $output;
+}
+
+/**
  * Overrides theme_field().
  */
 function other_field($variables) {
+
+  $customFields = array('field_portfolio_video','field_portfolio_category','field_portfolio_client','field_portfolio_website');
  
   $output = '';
  
@@ -97,21 +121,40 @@ function other_field($variables) {
   if (!$variables['label_hidden']) {
     $output .= '<div class="field-label"' . $variables['title_attributes'] . '>' . $variables['label'] . ':&nbsp;</div>';  
   }
-  
-  if ($variables['element']['#field_name'] == 'field_tags') {
-    // For tags, concatenate into a single, comma-delimitated string.
+
+  elseif ($variables['element']['#field_name'] == 'field_portfolio_client') {
     foreach ($variables['items'] as $delta => $item) {
-      $rendered_tags[] = drupal_render($item);
+      $rendered_items[] = drupal_render($item);
     }
-    $output .= implode(', ', $rendered_tags);
+    $output .= implode(' ', $rendered_items);
+  }
+  
+  elseif ($variables['element']['#field_name'] == 'field_portfolio_website') {
+    foreach ($variables['items'] as $delta => $item) {
+      $rendered_items[] = drupal_render($item);
+    }
+    $output .= implode(' ', $rendered_items);
+  }
+  
+  elseif ($variables['element']['#field_name'] == 'field_portfolio_category') {
+    foreach ($variables['items'] as $delta => $item) {
+      $rendered_items[] = drupal_render($item);
+    }
+    $output .= implode(' ', $rendered_items);
   }
   
   elseif ($variables['element']['#field_name'] == 'field_portfolio_video') {
-    // For tags, concatenate into a single, comma-delimitated string.
     foreach ($variables['items'] as $delta => $item) {
-      $rendered_tags[] = drupal_render($item);
+      $rendered_items[] = drupal_render($item);
     }
-    $output .= implode(' ', $rendered_tags);
+    $output .= implode(' ', $rendered_items);
+  }
+  
+  elseif ($variables['element']['#field_name'] == 'field_portfolio_tagline') {
+    foreach ($variables['items'] as $delta => $item) {
+      $rendered_items[] = drupal_render($item);
+    }
+    $output .= implode(' ', $rendered_items);
   }
            
   else {
