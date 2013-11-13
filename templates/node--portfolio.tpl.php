@@ -11,6 +11,21 @@ if ($next != NULL) {
 if ($prev != NULL) { 
   $prev_url = url('node/' . $prev, array('absolute' => TRUE));
 }
+
+/**
+ * Slideshow variables.
+ */
+if ($items = field_get_items('node', $node, 'field_portfolio_slideshow')) {
+  if (count($items) == 1) {
+    $image_slide = 'false';
+  }
+  elseif (count($items) > 1) {
+    $image_slide = 'true';
+  }
+}
+
+$img_count = 0;
+$counter = count($items);
 ?>
 
 <div class="article-nav">
@@ -29,9 +44,18 @@ if ($prev != NULL) {
 </div>
 <?php endif; ?>
 
-<?php if (!render($content['field_portfolio_video'])): ?>
-<img src="<?php echo file_create_url($node->field_portfolio_slideshow['und'][0]['uri']); ?>" alt="" />
-<div class="clear break small"></div>
+<?php if (!render($content['field_portfolio_video']) && ($image_slide == 'true')): ?>
+  <ul class="rslides">
+  <?php while ($img_count < $counter) { ?>
+    <li><img src="<?php echo file_create_url($node->field_portfolio_slideshow['und'][$img_count]['uri']); ?>" alt="" /></li>
+  <?php $img_count++; } ?>		
+  </ul>  
+  <div class="clear break small"></div>
+<?php endif; ?>
+
+<?php if (!render($content['field_portfolio_video']) && ($image_slide == 'false')): ?>
+  <img src="<?php echo file_create_url($node->field_portfolio_slideshow['und'][0]['uri']); ?>" alt="" />
+  <div class="clear break small"></div>
 <?php endif; ?>
 
 <article>
