@@ -140,7 +140,7 @@ function other_field($variables) {
     foreach ($variables['items'] as $delta => $item) {
       $rendered_items[] = drupal_render($item);
     }
-    $output .= implode(' ', $rendered_items);
+    $output .= implode(', ', $rendered_items);
   }
   
   elseif ($variables['element']['#field_name'] == 'field_portfolio_video') {
