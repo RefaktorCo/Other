@@ -11,11 +11,11 @@
 	opacity: 1;
 }
 
-.node-type-portfolio #single-portfolio {
+.node-type-portfolio #single-portfolio, .node-type-article  #single-page{
 	margin-left: 280px;
 }
 
-.node-type-portfolio .article-nav {
+.node-type-portfolio .article-nav, .node-type-article .article-nav {
 	display: none;
 }
 
