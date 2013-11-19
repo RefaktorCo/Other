@@ -71,7 +71,7 @@ $counter = count($items);
 	<div class="one_fourth last">
 			<h6><?php echo t('Project Details'); ?></h6>
 			<p><strong><?php echo t('CLIENT'); ?> :</strong> <?php print render($content['field_portfolio_client']); ?></p>
-			<p><strong><?php echo t('DATE'); ?>:</strong> 2nd September 2013</p>
+			<p><strong><?php echo t('DATE'); ?>:</strong> <?php print format_date($node->created, 'custom', 'M d, Y'); ?></p>
 			<p><strong><?php echo t('TAGS'); ?> :</strong> <?php print render($content['field_portfolio_category']); ?></p>
 			<p><strong><?php echo t('WEBSITE'); ?> :</strong> <a href="<?php print render($content['field_portfolio_website']); ?>"><?php print render($content['field_portfolio_website']); ?></a></p>
 		</div>

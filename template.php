@@ -1,6 +1,17 @@
 <?php
 
 /**
+ * Modify theme_js_alter()
+ */
+function other_js_alter(&$js) {
+  if (isset($js['misc/jquery.js'])) {
+       $jsPath = 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js';
+       $js['misc/jquery.js']['version'] = '1.7.2';
+    $js['misc/jquery.js']['data'] = $jsPath;
+  }
+}
+
+/**
  * Overrides theme_process_page().
  */
 function other_process_page(&$variables) {	
@@ -122,7 +133,7 @@ function other_field($variables) {
     $output .= '<div class="field-label"' . $variables['title_attributes'] . '>' . $variables['label'] . ':&nbsp;</div>';  
   }
 
-  elseif ($variables['element']['#field_name'] == 'field_portfolio_client') {
+  if ($variables['element']['#field_name'] == 'field_portfolio_client') {
     foreach ($variables['items'] as $delta => $item) {
       $rendered_items[] = drupal_render($item);
     }
