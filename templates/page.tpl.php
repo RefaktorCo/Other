@@ -82,3 +82,12 @@
   <?php endif; ?>
 	<?php print render($page['content']); ?>
 </div>		
+
+<?php if (field_get_items('node', $node, 'field_background_image') != FALSE): ?>
+	<script type="text/javascript">
+	jQuery(document).ready(function($){
+	  $('body').addClass("cover");
+	  $('body').css("background-image", "url(<?php echo file_create_url($node->field_background_image['und'][0]['uri']); ?>)");  
+	});
+	</script>
+<?php endif; ?>
