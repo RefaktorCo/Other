@@ -174,6 +174,13 @@ function other_field($variables) {
     }
     $output .= implode(', ', $rendered_items);
   }
+  
+  elseif ($variables['element']['#field_name'] == 'field_article_embed') {
+    foreach ($variables['items'] as $delta => $item) {
+      $rendered_items[] = drupal_render($item);
+    }
+    $output .= implode(' ', $rendered_items);
+  }
            
   else {
     $output .= '<div class="field-items"' . $variables['content_attributes'] . '>';

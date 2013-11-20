@@ -28,7 +28,9 @@ if ($prev != NULL) {
 	<h6 class="remove-bottom"><?php print render($content['field_article_tagline']); ?></h6>
 </div>
 
-<?php print render($content['field_image']); ?>
+<?php if (render($content['field_image'])) {print render($content['field_image']); } ?>
+
+<?php if (render($content['field_article_embed'])) {print render($content['field_article_embed']); } ?>
 <div class="clear break small"></div>
 
 <article>
