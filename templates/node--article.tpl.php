@@ -50,7 +50,8 @@ if ($prev != NULL) {
     <?php print $links; ?>
   </div>
 <?php endif; ?>
-
-<?php print render($content['comments']); ?>
-  
+<?php if (render($content['comments'])): ?>
+ <h5 id="comment-title"><?php print $comment_count; ?> <?php print t('Comments'); ?></h5>
+  <?php print render($content['comments']); ?>
+<?php endif; ?>  
 </article>

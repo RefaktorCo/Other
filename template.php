@@ -1,4 +1,10 @@
 <?php
+/**
+ * Define $root global variable.
+ */
+global $theme_root, $parent_root, $theme_path;
+$theme_root = base_path() . path_to_theme();
+$parent_root = base_path() . drupal_get_path('theme', 'other');
 
 /**
  * Modify theme_js_alter()
