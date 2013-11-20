@@ -19,6 +19,14 @@
 	display: none;
 }
 
+.blog .field-name-body {
+	margin-bottom: 25px;
+}
+
+.node-type-article .field-type-image {
+	text-align: center;
+}
+
 .region .widget:first-child {
   border-top: 1px solid #c5c5c5;
 }
