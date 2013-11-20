@@ -12,28 +12,29 @@
   <?php if ($new): ?>
     <span class="new"><?php print $new ?></span>
   <?php endif; ?>
-
-  <?php print render($title_prefix); ?>
-  <h6 class="margin-bottom-10" <?php print $title_attributes; ?>><?php print $author; ?> <span class="meta"> • <?php echo t('Posted');?> <?php print format_date($comment->created, 'custom', 'M d, Y'); ?></span></h6>
-  <?php print render($title_suffix); ?>
-
-  <div class="submitted">
-    <?php print $permalink; ?>
-    <?php print $submitted; ?>
+  
+  
+  <div class="comment-content"> 
+	  <?php print render($title_prefix); ?>
+	  <h6 class="margin-bottom-10" <?php print $title_attributes; ?>><?php print $author; ?> <span class="meta"> •  <?php echo t('Posted');?> <?php print format_date($comment->created, 'custom', 'M d, Y'); ?></span></h6>
+	  <?php print render($title_suffix); ?>
+	
+	  
+	
+	  <div class="content"<?php print $content_attributes; ?>>
+	    <?php
+	      // We hide the comments and links now so that we can render them later.
+	      hide($content['links']);
+	      print render($content);
+	    ?>
+	    <?php if ($signature): ?>
+	    <div class="user-signature clearfix">
+	      <?php print $signature ?>
+	    </div>
+	    <?php endif; ?>
+	  </div>
+	
+	  <?php print render($content['links']) ?> <?php print $permalink; ?>
+	  <hr>
   </div>
-
-  <div class="content"<?php print $content_attributes; ?>>
-    <?php
-      // We hide the comments and links now so that we can render them later.
-      hide($content['links']);
-      print render($content);
-    ?>
-    <?php if ($signature): ?>
-    <div class="user-signature clearfix">
-      <?php print $signature ?>
-    </div>
-    <?php endif; ?>
-  </div>
-
-  <?php print render($content['links']) ?>
 </div>

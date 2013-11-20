@@ -52,6 +52,7 @@ if ($prev != NULL) {
 <?php endif; ?>
 <?php if (render($content['comments'])): ?>
  <h5 id="comment-title"><?php print $comment_count; ?> <?php print t('Comments'); ?></h5>
+ <hr>
   <?php print render($content['comments']); ?>
 <?php endif; ?>  
 </article>
