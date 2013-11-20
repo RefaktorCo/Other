@@ -7,7 +7,7 @@
 		<div>
 			<a href="<?php echo $node_url; ?>">
 				<h4 class="heavy remove-bottom"><?php echo $title; ?></h4>
-				<p><?php print render($content['field_tags']); ?></p>
+				<p><?php print strtolower(render($content['field_tags'])); ?><?php if ($comment_count > 0): ?>, <?php echo $comment_count;?> <?php echo t('comment'); ?><?php if ($comment_count > 1) { echo "s"; }?><?php endif; ?></p>
 			</a>
 		</div>
 	</div>

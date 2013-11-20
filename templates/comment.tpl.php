@@ -16,7 +16,7 @@
   
   <div class="comment-content"> 
 	  <?php print render($title_prefix); ?>
-	  <h6 class="margin-bottom-10" <?php print $title_attributes; ?>><?php print $author; ?> <span class="meta"> •  <?php echo t('Posted');?> <?php print format_date($comment->created, 'custom', 'M d, Y'); ?></span></h6>
+	  <h6 class="margin-bottom-10" <?php print $title_attributes; ?>><?php print $author; ?> <span class="meta"> •  <?php echo t('Posted');?> <?php print format_date($comment->created, 'custom', 'M d, Y'); ?></span> <span class="comment-permalink"><?php print $permalink; ?></span></h6> 
 	  <?php print render($title_suffix); ?>
 	
 	  
@@ -34,7 +34,7 @@
 	    <?php endif; ?>
 	  </div>
 	
-	  <?php print render($content['links']) ?> <?php print $permalink; ?>
+	  <?php print render($content['links']) ?> 
 	  <hr>
   </div>
 </div>
