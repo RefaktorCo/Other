@@ -1,3 +1,7 @@
+<?php if (field_get_items('node', $node, 'field_background_image') != FALSE): ?>
+  <a href="#" class="view-background"><i class="icon-eye-close icon-2x"></i></a>
+<?php endif; ?>  
+
 <div id="mobile-nav">
 	<i class="icon-reorder"></i>
 	<?php if ($logo): ?>
