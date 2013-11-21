@@ -230,17 +230,11 @@ function other_pagination($node, $mode = 'n') {
   if ($n_nid) {
     $n_node = '';
     $n_node = node_load($n_nid);
-		
-    switch($n_node->type) {	
-      case 'portfolio': 
-        $id =  $n_node->nid; 
-      return $id; 
+   
+	  $id =  $n_node->nid; 
+	  return $id; 
       
-      case 'article': 
-        $html = l($link_text, 'node/'.$n_node->nid); 
-      return $html;
-    }
-  }
+   }
 }
 
 /**

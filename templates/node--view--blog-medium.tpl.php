@@ -1,4 +1,4 @@
-<li>
+<li class="view-article">
   <div class="one_half">
 	  <?php if (render($content['field_article_embed'])) { print render($content['field_article_embed']); } ?>
 	  
