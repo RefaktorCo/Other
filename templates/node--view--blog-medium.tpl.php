@@ -1,4 +1,5 @@
 <li class="view-article">
+  <?php if ( (render($content['field_article_embed'])) OR (render($content['field_image'])) ): ?>
   <div class="one_half">
 	  <?php if (render($content['field_article_embed'])) { print render($content['field_article_embed']); } ?>
 	  
@@ -14,9 +15,15 @@
 		</div>
 		<?php endif; ?>
   </div>
+  <?php endif; ?>
+  
+  <?php if ( (render($content['field_article_embed'])) OR (render($content['field_image'])) ): ?>
 	<div class="one_half last">
-	<h5><a href="<?php echo $node_url; ?>"><?php echo $title; ?></a></h5>
-	<?php print render($content['body']); ?>
-	<a href="<?php echo $node_url; ?>" class="no-border"><?php echo t('Continue Reading');?> &rarr;</a>
+	<?php endif; ?>
+		<h5><a href="<?php echo $node_url; ?>"><?php echo $title; ?></a></h5>
+		<?php print render($content['body']); ?>
+		<a href="<?php echo $node_url; ?>" class="no-border"><?php echo t('Continue Reading');?> &rarr;</a>
+	<?php if ( (render($content['field_article_embed'])) OR (render($content['field_image'])) ): ?>
 	</div>
+	<?php endif; ?>
 </li>

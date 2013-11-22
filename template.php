@@ -174,6 +174,27 @@ function other_field($variables) {
     $output .= implode(' ', $rendered_items);
   }
   
+  elseif ($variables['element']['#field_name'] == 'field_team_tagline') {
+    foreach ($variables['items'] as $delta => $item) {
+      $rendered_items[] = drupal_render($item);
+    }
+    $output .= implode(' ', $rendered_items);
+  }
+  
+  elseif ($variables['element']['#field_name'] == 'field_team_date') {
+    foreach ($variables['items'] as $delta => $item) {
+      $rendered_items[] = drupal_render($item);
+    }
+    $output .= implode(' ', $rendered_items);
+  }
+  
+  elseif ($variables['element']['#field_name'] == 'field_team_position') {
+    foreach ($variables['items'] as $delta => $item) {
+      $rendered_items[] = drupal_render($item);
+    }
+    $output .= implode(' ', $rendered_items);
+  }
+  
   elseif ($variables['element']['#field_name'] == 'field_tags') {
     foreach ($variables['items'] as $delta => $item) {
       $rendered_items[] = drupal_render($item);
