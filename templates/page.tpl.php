@@ -1,4 +1,4 @@
-<?php if (field_get_items('node', $node, 'field_background_image') != FALSE): ?>
+<?php if (isset($node) && field_get_items('node', $node, 'field_background_image') != FALSE): ?>
   <a href="#" class="view-background"><i class="icon-eye-close icon-2x"></i></a>
 <?php endif; ?>  
 
@@ -87,7 +87,7 @@
 	<?php print render($page['content']); ?>
 </div>		
 
-<?php if (field_get_items('node', $node, 'field_background_image') != FALSE): ?>
+<?php if (isset($node) && field_get_items('node', $node, 'field_background_image') != FALSE): ?>
 	<script type="text/javascript">
 	jQuery(document).ready(function($){
 	  $('body').addClass("cover");
