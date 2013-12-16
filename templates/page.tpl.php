@@ -59,7 +59,7 @@
 	<?php endif; ?>
 </header>
 
-<div class="content-wrapper">
+<div id="basic-page" class="content-wrapper">
 	<div id="loader"></div>
 	<?php if ($messages): ?>
 	  <div id="messages">
