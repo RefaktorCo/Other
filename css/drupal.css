@@ -16,7 +16,7 @@
 	opacity: 1;
 }
 
-.node-type-portfolio #single-portfolio, #single-page, .node-type-team #single-team{
+.node-type-portfolio #single-portfolio, .node-type-article  #single-page, .node-type-team #single-team{
 	margin-left: 280px;
 }
 

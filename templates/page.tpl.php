@@ -59,7 +59,7 @@
 	<?php endif; ?>
 </header>
 
-<section class="content">
+<div class="content-wrapper">
 	<div id="loader"></div>
 	<?php if ($messages): ?>
 	  <div id="messages">
@@ -86,7 +86,7 @@
   <?php endif; ?>
   <?php print render($page['before_content']); ?>
 	<?php print render($page['content']); ?>
-</section>	
+</div>
 
 <?php if (isset($node) && field_get_items('node', $node, 'field_background_image') != FALSE): ?>
 	<script type="text/javascript">
