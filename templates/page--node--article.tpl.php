@@ -55,7 +55,7 @@
 	<?php endif; ?>
 </header>
 
-<div class="page-wrapper">
+<section id="single-article" class="content">
 	<div id="loader"></div>
 	<?php if ($messages): ?>
 	  <div id="messages">
@@ -74,4 +74,4 @@
     </ul>
   <?php endif; ?>
 	<?php print render($page['content']); ?>
-</div>	
+</section>
