@@ -2,6 +2,11 @@
 	display: none;
 }
 
+.content-wrapper {
+	background: #fff;
+
+}
+
 .mobile-logo img {
 	height: 38px;
 }
@@ -15,7 +20,7 @@
 	margin-left: 280px;
 }
 
-.node-type-portfolio .article-nav, .node-type-article .article-nav, .node-type-team .article-nav  {
+.node-type-portfolio .article-nav, .node-type-article .article-nav, .node-type-team .article-nav, #node-page  {
 	display: none;
 }
 
@@ -23,7 +28,7 @@
 	margin-bottom: 25px;
 }
 
-#article-wrap .field-type-image {
+#article-wrap .field-type-image, #single-team .field-type-image {
 	text-align: center;
 }
 
