@@ -16,5 +16,4 @@
 	<h5><a href="<?php echo $node_url; ?>"><?php echo $title; ?></a></h5>
 	<?php print render($content['body']); ?>
 	<a href="<?php echo $node_url; ?>" class="no-border"><?php echo t('Continue Reading');?> &rarr;</a>
-
 </li>
