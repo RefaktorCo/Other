@@ -12,11 +12,13 @@
 </div>
 
 <header>
-	<div id="logo">
-		<a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home">
-      <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-    </a>
-	</div>
+  <?php if ($logo): ?>
+		<div id="logo">
+			<a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home">
+	      <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+	    </a>
+		</div>
+	<?php endif; ?>
 	
 	<?php if ($site_name || $site_slogan): ?>
     <div id="name-and-slogan"<?php if ($disable_site_name && $disable_site_slogan) { print ' class="hidden"'; } ?>>

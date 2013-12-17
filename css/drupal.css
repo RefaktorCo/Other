@@ -2,9 +2,20 @@
 	display: none;
 }
 
-.content-wrapper {
+#site-name {
+	text-align: center;
+  font-size: 46px;
+  margin: 10px 0px 5px 0px;
+}
 
+#site-name a {
+	border-bottom: none;
+}
 
+#site-slogan {
+	text-align: center;
+  font-size: 16px;
+  margin: 10px 0px 20px 0px;
 }
 
 #basic-page {

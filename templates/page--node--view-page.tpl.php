@@ -6,17 +6,19 @@
 	<i class="icon-reorder"></i>
 	<?php if ($logo): ?>
 		<a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="mobile-logo">
-	    <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+	    <img src="<?php print file_create_url(file_load(theme_get_setting('mobile_logo'))->uri);; ?>" alt="<?php print t('Home'); ?>" />
 	  </a>
 	<?php endif; ?>
 </div>
 
 <header>
-	<div id="logo">
-		<a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home">
-      <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-    </a>
-	</div>
+  <?php if ($logo): ?>
+		<div id="logo">
+			<a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home">
+	      <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+	    </a>
+		</div>
+	<?php endif; ?>
 	
 	<?php if ($site_name || $site_slogan): ?>
     <div id="name-and-slogan"<?php if ($disable_site_name && $disable_site_slogan) { print ' class="hidden"'; } ?>>
