@@ -51,6 +51,8 @@ function other_preprocess_page(&$vars, $hook) {
     $term = taxonomy_term_load(arg(2));
     $vars['theme_hook_suggestions'][] = 'page--taxonomy--vocabulary--' . $term->vid;
   }
+  
+  
 }
 
 /**
@@ -189,6 +191,13 @@ function other_field($variables) {
   }
   
   elseif ($variables['element']['#field_name'] == 'field_team_position') {
+    foreach ($variables['items'] as $delta => $item) {
+      $rendered_items[] = drupal_render($item);
+    }
+    $output .= implode(' ', $rendered_items);
+  }
+  
+  elseif ($variables['element']['#field_name'] == 'field_before_content_embed') {
     foreach ($variables['items'] as $delta => $item) {
       $rendered_items[] = drupal_render($item);
     }

@@ -6,7 +6,7 @@
 	<i class="icon-reorder"></i>
 	<?php if ($logo): ?>
 		<a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="mobile-logo">
-	    <img src="<?php print file_create_url(file_load(theme_get_setting('mobile_logo'))->uri);; ?>" alt="<?php print t('Home'); ?>" />
+	    <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
 	  </a>
 	<?php endif; ?>
 </div>
@@ -66,14 +66,7 @@
 	   <?php print $messages; ?>
 	  </div>
 	<?php endif; ?>
-	<?php print render($title_prefix); ?>
-  <?php if ($title): ?>
-    <h1 class="title" id="page-title">
-      <?php print $title; ?>
-    </h1>
-  <?php endif; ?>
-  <?php print render($title_suffix); ?>
-  <?php if ($tabs): ?>
+	<?php if ($tabs): ?>
     <div class="tabs">
       <?php print render($tabs); ?>
     </div>

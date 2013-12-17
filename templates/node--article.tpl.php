@@ -25,7 +25,7 @@ if ($prev != NULL) {
 	</div>
 	
 	<div class="video-title blog">
-		<h2><small><?php print format_date($node->created, 'custom', 'M d, Y'); ?></small><?php echo $title; ?><small>Posted In: <?php print render($content['field_tags']); ?></small></h2>
+		<h2><?php if ( theme_get_setting('meta_date') == '1' ) : ?><small><?php print format_date($node->created, 'custom', 'M d, Y'); ?></small><?php endif; ?><?php if ( theme_get_setting('meta_title') == '1' ) { echo $title; } ?><?php if ( (render($content['field_tags'])) AND (theme_get_setting('meta_tags')) == '1' ): ?><small>Posted In: <?php print render($content['field_tags']); ?></small><?php endif; ?></h2>
 		<h6 class="remove-bottom"><?php print render($content['field_article_tagline']); ?></h6>
 	</div>
 	
