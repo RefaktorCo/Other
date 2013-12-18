@@ -136,28 +136,59 @@ function other_form_contact_site_form_alter(&$form, &$form_state, $form_id) {
   $form['name'] = array(
 	  '#type' => 'textfield',
 	  '#maxlength' => 255,
-	  '#attributes' =>array('placeholder' => t('Name')),
+	  '#attributes' =>array('placeholder' => t('name')),
 	  '#required' => TRUE,
 	);
   
 	$form['mail'] = array(
 	  '#type' => 'textfield',
 	  '#maxlength' => 255,
-	  '#attributes' =>array('placeholder' => t('Email')),
+	  '#attributes' =>array('placeholder' => t('email')),
 	  '#required' => TRUE,
 	);
 	
 	$form['subject'] = array(
 	  '#type' => 'textfield',
 	  '#maxlength' => 255,
-	  '#attributes' =>array('placeholder' => t('Subject')),
+	  '#attributes' =>array('placeholder' => t('subject')),
 	  '#required' => TRUE,
 	);
 	
 	$form['message'] = array(
 	  '#type' => 'textarea',
 	  '#maxlength' => 255,
-	  '#attributes' =>array('placeholder' => t('Message')),
+	  '#attributes' =>array('placeholder' => t('message')),
+	  '#required' => TRUE,
+	);
+
+}
+
+/**
+* Implements hook_form_comment_form_alter().
+*/
+function other_form_comment_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
+  
+  if (!$user->uid) {
+  $form['author']['name'] = array(
+	  '#type' => 'textfield',
+	  '#maxlength' => 255,
+	  '#attributes' =>array('placeholder' => t('name')),
+	  '#required' => TRUE,
+	);
+	}
+	
+	$form['subject'] = array(
+	  '#type' => 'textfield',
+	  '#maxlength' => 255,
+	  '#attributes' =>array('placeholder' => t('subject')),
+	  '#required' => TRUE,
+	);
+	
+	$form['comment_body'] = array(
+	  '#type' => 'textarea',
+	  '#maxlength' => 255,
+	  '#attributes' =>array('placeholder' => t('comment')),
 	  '#required' => TRUE,
 	);
 

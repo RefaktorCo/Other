@@ -35,6 +35,15 @@
 	margin: 0;
 }
 
+.region-sidebar-primary {
+	padding: 20px;
+	margin-top: -20px;
+}
+
+.filters {
+  padding: 0px 20px 13px 20px;
+}
+
 .region .content, .title {
 	padding-left: 0px;
 	opacity: 1;
