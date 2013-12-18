@@ -61,8 +61,6 @@
     </div>
   <?php endif; ?>
 
-
-
   <?php if ($attachment_after): ?>
     <div class="attachment attachment-after">
       <?php print $attachment_after; ?>
@@ -85,6 +83,7 @@
     </div>
   <?php endif; ?>
 </ul>
-  <?php if ($pager): ?>
-    <?php print $pager; ?>
-  <?php endif; ?>
+
+<?php if ($pager): ?>
+  <?php print $pager; ?>
+<?php endif; ?>

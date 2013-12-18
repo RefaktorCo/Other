@@ -69,4 +69,19 @@ function other_form_system_theme_settings_alter(&$form, &$form_state) {
         '#default_value' => theme_get_setting('user_css'),
       );     
 }
+
+function other_settings_submit($form, &$form_state) {
+  $images = array($form_state['values']['mobile_logo']);
+
+  foreach ($images as $item) {
+    if (!empty($item)) {
+			/* Permanently Save Managed Files */
+			$fid = $item;
+			$file = file_load($fid);
+			$file->status = FILE_STATUS_PERMANENT;
+			file_save($file);
+			file_usage_add($file, 'other', 'other', $item);
+    }
+  }
+}
 ?>

@@ -164,6 +164,54 @@ function other_form_contact_site_form_alter(&$form, &$form_state, $form_id) {
 }
 
 /**
+ * Modify theme_item_list()
+ */
+function other_item_list($vars) {
+  if (isset($vars['attributes']['class']) && in_array('pager', $vars['attributes']['class'])) {
+    unset($vars['attributes']['class']);
+    foreach ($vars['items'] as $i => &$item) {
+      if (in_array('pager-current', $item['class'])) {
+        $item['class'] = array('page-numbers-current current');
+        $item['data'] = $item['data'];
+      }
+      
+      elseif (in_array('pager-item', $item['class'])) {
+        $item['class'] = array('page-numbers');
+        $item['data'] =  $item['data'];
+      }
+      
+      elseif (in_array('pager-next', $item['class'])) {
+        $item['class'] = array('next page-numbers');
+        $item['data'] =  $item['data'];
+      }
+      
+      elseif (in_array('pager-last', $item['class'])) {
+        $item['class'] = array('page-numbers');
+        $item['data'] =  $item['data'];
+      }
+      
+      elseif (in_array('pager-first', $item['class'])) {
+        $item['class'] = array('page-numbers first');
+        $item['data'] =  $item['data'];
+      }
+      
+      elseif (in_array('pager-previous', $item['class'])) {
+        $item['class'] = array('prev page-numbers');
+        $item['data'] =  $item['data'];
+      }
+      
+      elseif (in_array('pager-ellipsis', $item['class'])) {
+        $item['class'] = array('disabled');
+        $item['data'] =  $item['data'];
+      }
+    }
+    return '<div class="pagination">' . theme_item_list($vars) . '</div>';
+  }
+  return theme_item_list($vars);
+}
+
+
+/**
 * Implements hook_form_comment_form_alter().
 */
 function other_form_comment_form_alter(&$form, &$form_state, $form_id) {
