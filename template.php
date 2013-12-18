@@ -128,6 +128,42 @@ function other_menu_local_tasks(&$variables) {
 }
 
 /**
+* Implements hook_form_contact_site_form_alter().
+*/
+function other_form_contact_site_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
+  
+  $form['name'] = array(
+	  '#type' => 'textfield',
+	  '#maxlength' => 255,
+	  '#attributes' =>array('placeholder' => t('Name')),
+	  '#required' => TRUE,
+	);
+  
+	$form['mail'] = array(
+	  '#type' => 'textfield',
+	  '#maxlength' => 255,
+	  '#attributes' =>array('placeholder' => t('Email')),
+	  '#required' => TRUE,
+	);
+	
+	$form['subject'] = array(
+	  '#type' => 'textfield',
+	  '#maxlength' => 255,
+	  '#attributes' =>array('placeholder' => t('Subject')),
+	  '#required' => TRUE,
+	);
+	
+	$form['message'] = array(
+	  '#type' => 'textarea',
+	  '#maxlength' => 255,
+	  '#attributes' =>array('placeholder' => t('Message')),
+	  '#required' => TRUE,
+	);
+
+}
+
+/**
  * Overrides theme_field().
  */
 function other_field($variables) {

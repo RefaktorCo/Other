@@ -18,6 +18,10 @@
   margin: 10px 0px 20px 0px;
 }
 
+.mobile-logo {
+	border-bottom: none;
+}
+
 #basic-page {
 	background: #fff;
 	max-width: 1280px;
@@ -25,6 +29,10 @@
 
 .mobile-logo img {
 	height: 38px;
+}
+
+.contact-form .form-item {
+	margin: 0;
 }
 
 .region .content, .title {
