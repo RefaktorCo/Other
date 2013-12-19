@@ -1,8 +1,16 @@
 <?php
+
+
 /**
  * Implements hook_form_system_theme_settings_alter()
  */
 function other_form_system_theme_settings_alter(&$form, &$form_state) {
+
+  // Default path for alt logo
+  $mobile_logo_path = theme_get_setting('mobile_logo_path');
+  if (file_uri_scheme($mobile_logo_path) == 'public') {
+    $mobile_logo_path = file_uri_target($mobile_logo_path);
+  }
   
   // Main settings wrapper
   $form['options'] = array(
@@ -17,18 +25,18 @@ function other_form_system_theme_settings_alter(&$form, &$form_state) {
     '#title' => t('General'),
   );
                 
-    // Alt Logo
-    $form['options']['general']['mobile_logo'] = array(
-     '#title' => t('Mobile Logo'),
-     '#type' => 'managed_file',
-     '#description' => t('Alt logo for mobile layout.'),
-     '#default_value' => theme_get_setting('mobile_logo'),
-     '#upload_location' => 'public://theme_settings/',
-     '#upload_validators' => array(
-     'file_validate_extensions' => array('gif png jpg jpeg'),
-      ),
+	  $form['options']['general']['mobile_logo_path'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Path to logo'),
+      '#default_value' => $mobile_logo_path,
+      '#disabled' => TRUE,
     );
-        
+
+    $form['options']['general']['mobile_logo'] = array(
+      '#type' => 'file',
+      '#title' => t('Upload alternate logo for mobile devices'),
+    );    
+          
   // Post Meta
   $form['options']['meta'] = array(
     '#type' => 'fieldset',
@@ -68,20 +76,33 @@ function other_form_system_theme_settings_alter(&$form, &$form_state) {
         '#title' => t('Add your own CSS'),
         '#default_value' => theme_get_setting('user_css'),
       );     
+      
+  // Submit Button
+  $form['#submit'][] = 'other_settings_submit';     
 }
+
 
 function other_settings_submit($form, &$form_state) {
-  $images = array($form_state['values']['mobile_logo']);
-
-  foreach ($images as $item) {
-    if (!empty($item)) {
-			/* Permanently Save Managed Files */
-			$fid = $item;
-			$file = file_load($fid);
-			$file->status = FILE_STATUS_PERMANENT;
-			file_save($file);
-			file_usage_add($file, 'other', 'other', $item);
+  // Get the previous value
+  $previous = 'public://' . $form['options']['general']['mobile_logo_path']['#default_value'] ;
+  
+  $file = file_save_upload('mobile_logo');
+  if ($file) {
+    $parts = pathinfo($file->filename);
+    $destination = 'public://' . $parts['basename'];
+    $file->status = FILE_STATUS_PERMANENT;
+    
+    if(file_copy($file, $destination, FILE_EXISTS_REPLACE)) {
+      $_POST['mobile_logo_path'] = $form_state['values']['mobile_logo_path'] = $destination;
+      if ($destination != $previous) {
+        return;
+      }
     }
+  } else {
+    // Avoid error when the form is submitted without specifying a new image
+    $_POST['mobile_logo_path'] = $form_state['values']['mobile_logo_path'] = $previous;
   }
+  
 }
+
 ?>

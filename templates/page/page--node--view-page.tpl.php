@@ -4,9 +4,9 @@
 
 <div id="mobile-nav">
 	<i class="icon-reorder"></i>
-	<?php if (theme_get_setting('mobile_logo') != ""): ?>
+	<?php if (theme_get_setting('mobile_logo_path') != ""): ?>
 		<a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="mobile-logo">
-	    <img src="<?php print file_create_url(file_load(theme_get_setting('mobile_logo'))->uri);; ?>" alt="<?php print t('Home'); ?>" />
+	    <img src="<?php print file_create_url(theme_get_setting('mobile_logo_path')); ?>" alt="<?php print t('Home'); ?>" />
 	  </a>
 	<?php endif; ?>
 </div>
