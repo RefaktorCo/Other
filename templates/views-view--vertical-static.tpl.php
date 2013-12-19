@@ -62,10 +62,6 @@
     </div>
   <?php endif; ?>
 
-  <?php if ($pager): ?>
-    <?php print $pager; ?>
-  <?php endif; ?>
-
   <?php if ($attachment_after): ?>
     <div class="attachment attachment-after">
       <?php print $attachment_after; ?>
@@ -89,3 +85,7 @@
   <?php endif; ?>
   </ul>
 </div>  
+
+<?php if ($pager): ?>
+  <?php print $pager; ?>
+<?php endif; ?>
