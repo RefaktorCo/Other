@@ -2,7 +2,7 @@
 
 Theme by Refaktor - http://refaktorthemes.com 
 Demo - http://refaktorthemes.com/other
-Original design by TommusRoddus - http://themeforest.net/user/TommusRodus
+Original design by TommusRhodus - http://themeforest.net/user/TommusRhodus
 
 ==Libraries and Resources==
 jQuery EasyTabs(http://os.alfajango.com/easytabs/) by Steve Schwartz dual released under the MIT(1) and GNU(2) licenses.
