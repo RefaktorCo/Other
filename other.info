@@ -2,7 +2,7 @@ name = Other
 description = Responsive Drupal 7 Theme. 
 core = 7.x
 engine = phptemplate
-version = 1.0-ALPHA
+version = 1.0
 
 ; Define theme stylesheets.
 stylesheets[all][] = css/font-awesome.min.css

@@ -200,6 +200,8 @@ jQuery(document).ready(function($){
 	});
 	
 	$('body').on('click', 'a.close', function(){
+	
+	  $('.filters').slideDown();
 		
 		$('#loader').slideUp(function(){
 			$('ul.grid, .gallery-wrapper').css('max-height', '');
