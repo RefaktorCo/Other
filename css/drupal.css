@@ -96,7 +96,7 @@
 	margin-bottom: 25px;
 }
 
-#article-wrap .field-type-image, #single-team .field-type-image {
+#article-wrap .field-type-image, #single-team .field-type-image, .single-portfolio-img {
 	text-align: center;
 }
 

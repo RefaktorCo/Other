@@ -284,6 +284,13 @@ function other_field($variables) {
     $output .= implode(' ', $rendered_items);
   }
   
+  elseif ($variables['element']['#field_name'] == 'field_portfolio_image') {
+    foreach ($variables['items'] as $delta => $item) {
+      $rendered_items[] = drupal_render($item);
+    }
+    $output .= implode(' ', $rendered_items);
+  }
+  
   elseif ($variables['element']['#field_name'] == 'field_portfolio_tagline') {
     foreach ($variables['items'] as $delta => $item) {
       $rendered_items[] = drupal_render($item);

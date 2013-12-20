@@ -54,7 +54,9 @@ $counter = count($items);
 <?php endif; ?>
 
 <?php if (!render($content['field_portfolio_video']) && ($image_slide == 'false')): ?>
-  <img src="<?php echo file_create_url($node->field_portfolio_slideshow['und'][0]['uri']); ?>" alt="" />
+  <div class="single-portfolio-img">
+    <?php print render($content['field_portfolio_image']); ?>
+  </div>
   <div class="clear break small"></div>
 <?php endif; ?>
 
