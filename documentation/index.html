@@ -16,7 +16,7 @@
 <div id="wrapper">
 <h2>Overview</h2>
 <p>Other is perfect for the creatives out there, the forward thinkers and those who just want a kick-ass site for their business or service. For theme support that cannot be found in this documentation, please visit our <a href="http://refaktorthemes.com/support"> support forum</a>. 
-<p>Updated: 12/20/13<br>Author: <a href="http://refaktorthemes.com" target="_blank">Refaktor</a><br>Docs powered by: <a href="https://github.com/jgallen23/toc" target="_blank">TOC</a><br>Original design by <a href="http://themeforest.net/user/
+<p>Updated: 12/23/13<br>Author: <a href="http://refaktorthemes.com" target="_blank">Refaktor</a><br>Docs powered by: <a href="https://github.com/jgallen23/toc" target="_blank">TOC</a><br>Original design by <a href="http://themeforest.net/user/
 TommusRhodus" target="_blank">
 TommusRhodus</a></p>
 <h2>Installation</h2>
@@ -80,34 +80,27 @@ Option 2:
 <img src="images/portfolio.png"><br/><br/>
 <p><strong>Fields:</strong></p>
 <ul>
-<li><strong>Image:</strong> The default Image field used for uploading the images.</li>
+<li><strong>Title:</strong> The default Drupal title field.</li>
+<li><strong>Portfolio Tagline:</strong> Used as a short description for your portfolio item.</li>
 <li><strong>Portfolio Category:</strong> This is a term reference field that is linked to a vocabulary created specifically for this content type.</li>
-<li><strong>Portfolio Slider:</strong> Use this field to upload images for the slider that is used on the single portfolio nodes.</li>
+<li><strong>Portfolio Video:</strong> A long text field for adding video embed code such as Youtube or Vimeo.</li>
+<li><strong>Portfolio Image:</strong> The default single image for your item which is used on the main portfolio view block.</li>
+<li><strong>Portfolio Slideshow:</strong> Use this field to upload images for the slider that is used on the single portfolio nodes.</li>
+<li><strong>Portfolio Client:</strong>Used to display the client the portfolio item represents.</li>
+<li><strong>Portfolio Website:</strong>Used to display the project website.</li>
 </ul>
 
-<p><strong>Portfolio Block - Example: <a href="http://refaktorthemes.com/Other/portfolio-4-columns" target="_blank"> http://refaktorthemes.com/Other/portfolio-4-columns</a></strong></p>
-<p>This is the standard Portfolio style which utilizes the "Portfolio Block Page" View. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/portfolio-block.txt to import this View. Then simply place the "View: Portfolio Block" in the Content region and configure the block visibility settings to your liking.</p>
+<p><strong>Portfolio Block - Example: <a href="http://refaktorthemes.com/other" target="_blank"> http://refaktorthemes.com/other</a></strong></p>
+<p>This is the standard Portfolio style which utilizes the "Portfolio Block" View. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/portfolio-block.txt to import this View. Then simply place the "View: Portfolio Block" in the Content region and configure the block visibility settings to your liking.</p>
 <p><strong>Template files</strong></p>
 <ul>
-<li>/templates/node/node--portfolio.tpl.php</li>
-<li>/templates/field--field_portfolio_slider--portfolio.tpl.php</li>
 <li>/templates/node/node--view--portfolio--block.tpl.php</li>
 <li>/templates/views/views-view--portfolio-block.tpl.php</li>
-</ul>
-
-<h4>Portfolio Columns</h4>
-<p>To change the number of items appear in a row in the Portfolio block visit the theme settings (/admin/appearance/settings/Other).</p>
-
-<h4>Related Projects:</h4>
-Other also includes support for a "Recent Works" block that you can use to showcase additional Portfolio items on the single Portfolio node pages, or anywhere else you would like. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/recent-works.txt to import this View. Then simply place the "View: Recent Works" in the Content region and configure the block visibility settings to your liking.</p>
-<p><strong>Template files</strong></p>
-<ul>
-<li>/templates/node/node--view--recent-works--block.tpl.php</li>
-<li>/templates/views/views-view--recent-works.tpl.php</li>
+<li>/templates/views/views-view--unformated-portfolio-block.tpl.php</li>
 </ul>
 
 <h4>Portfolio Filters:</h4>
-<p>The Portfolio includes support for an Isotope filter effect powered by Taxonomy terms. To utilize this effect visit /admin/structure/taxonomy and create a new vocabulary (example: Portfolio). After creating your vocabulary you can create the terms you wish to use to categorize your portfolio items. This taxonomy vocabulary can be linked to the Portfolio content type via a term reference field so you can select the category or categories you want to place your items into.</p>
+<p>The Portfolio Block view includes support for an Isotope filter effect powered by Taxonomy terms. To utilize this effect visit /admin/structure/taxonomy and create a new vocabulary (example: Portfolio). After creating your vocabulary you can create the terms you wish to use to categorize your portfolio items. This taxonomy vocabulary can be linked to the Portfolio content type via a term reference field so you can select the category or categories you want to place your items into.</p>
 
 <p>The filters are powered by a View called Portfolio Filters that is placed in the View header as a global view area. If you don't already have this view you can use the code in /views_exports/portfolio-filters.txt to import as a View for placement in the View header of the Portfolio view.</p>
 
