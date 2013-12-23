@@ -246,7 +246,7 @@ This modified version of the default page content type can be used to create all
 
 <h3>Article</h3>
 <p>
-This modified version of the default article content type can be used to create all of your article nodes. Below we will outline the fields used in this content type and their corresponding theme template files.
+This modified version of the default article content type can be used to create all of your article nodes. Below we will outline the fields used in this content type and the different view blocks and their corresponding theme template files.
 </p>
 <p><strong>Fields:</strong></p>
 <img src="images/article.png"><br/><br/>
@@ -267,43 +267,40 @@ This modified version of the default article content type can be used to create 
 	</ul>
 </ul>	
 
+<h4>View Blocks</h4>
 
-<h2>Blog (posts)</h2>
-<p>The Other demo uses a View to display the article content type nodes. If you do not already have this View using one of our different installation methods you can use the code found in /views-exports/blog.txt to import the View and all its settings. To change the style of image on that View page you can use the Blog View Image option in the theme settings (/admin/appearance/settings/Other).</p>
-<h4>Author bio</h4>
-<p>To display a small author bio on the article node page, install the <a href="https://drupal.org/project/profile2" target="_blank">Profile2 module</a> and follow these steps to configure it:</p>
-<ol>
-<li>Visit /admin/structure/profiles and create a new profile type called "main". If this already exists skip to the next step.</li>
-<li>Add a field to that profile called "Bio". If this exists skip to the next step.</li>
-<li>Visit /admin/people and edit your user. Then click on the "Main Profile" tab in the top right corner next to the "Account" link to add your author bio.</li>
-</ol>
+<p><strong>Two Columns - Examples: <a href="http://refaktorthemes.com/other/blog" target="_blank"> http://refaktorthemes.com/other/blog</a>.</strong></p>
+<p>This is the default blog style which utilizes the "Blog" view. If you are not using the full demo or did not use the Custom Content module you can use the /assets/views/blog.txt (in the root of the download files) to import this view. Then simply place the "View: Blog" block in the Content region and configure the block visibility settings to your liking.</p>
+<ul>
+<p><strong>Template files:</strong></p>
+	<ul>
+		<li>/templates/node/node--view--blog.tpl.php</li>
+		<li>/templates/views/views-view--blog.tpl.php</li>
+	</ul>
+</ul>
+
+<p><strong>Medium - Examples: <a href="http://refaktorthemes.com/other/blog-medium" target="_blank"> http://refaktorthemes.com/other/blog-medium</a>.</strong></p>
+<p>This is the medium blog style which utilizes the "Blog Medium" view. If you are not using the full demo or did not use the Custom Content module you can use the /assets/views/blog-medium.txt (in the root of the download files) to import this view. Then simply place the "View: Blog Medium" block in the Content region and configure the block visibility settings to your liking.</p>
+<ul>
+<p><strong>Template files:</strong></p>
+	<ul>
+		<li>/templates/node/node--view--blog-medium.tpl.php</li>
+		<li>/templates/views/views-view--blog-medium.tpl.php</li>
+	</ul>
+</ul>		
+
+<p><strong>Large - Examples: <a href="http://refaktorthemes.com/other/blog-large" target="_blank"> http://refaktorthemes.com/other/blog-large</a>.</strong></p>
+<p>This is the large blog style which utilizes the "Blog Large" view. If you are not using the full demo or did not use the Custom Content module you can use the /assets/views/blog-large.txt (in the root of the download files) to import this view. Then simply place the "View: Blog Large" block in the Content region and configure the block visibility settings to your liking.</p>
+<ul>
+<p><strong>Template files:</strong></p>
+	<ul>
+		<li>/templates/node/node--view--blog-medium.tpl.php</li>
+		<li>/templates/views/views-view--blog-medium.tpl.php</li>
+	</ul>
+</ul>		
 
 <h2>Block Regions</h2>
-<p>Other features 16 block regions where you can add your own custom content. Visit yourdomain.com/admin/structure/block to add your own content to the defined block regions. Press "Add Block" to create a new custom blog, or select an existing block from the Disabled list below the defined block regions.</p>
-<h4>Header Block Regions</h4>
-<p>Other features four header regions: Header Left, Header Right, Menu and Search. You can use the "demonstrate block regions" link on /admin/structure/block to see exactly where these are located, but the names are fairly self explanatory. If you would like to mimic the social icon region seen above the menu on the demo you can use the following markup in a block:</p>
-<pre>
-&lt;div class=&quot;widget widget_contacts&quot;&gt;
-
-	&lt;div class=&quot;vcard clearfix&quot;&gt;
-
-		&lt;p class=&quot;top-phone&quot;&gt;Call Us : &lt;span&gt;+00 123456789&lt;/span&gt;&lt;/p&gt;
-
-	&lt;/div&gt;&lt;!--/ .vcard--&gt;
-
-	&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;
-	
-	&lt;ul class=&quot;social-icons&quot;&gt;
-		&lt;li class=&quot;twitter&quot;&gt;&lt;a href=&quot;#&quot;&gt;Twitter&lt;/a&gt;&lt;/li&gt;
-		&lt;li class=&quot;facebook&quot;&gt;&lt;a href=&quot;#&quot;&gt;Facebook&lt;/a&gt;&lt;/li&gt;
-		&lt;li class=&quot;dribble&quot;&gt;&lt;a href=&quot;#&quot;&gt;Dribble&lt;/a&gt;&lt;/li&gt;
-		&lt;li class=&quot;vimeo&quot;&gt;&lt;a href=&quot;#&quot;&gt;Vimeo&lt;/a&gt;&lt;/li&gt;
-		&lt;li class=&quot;youtube&quot;&gt;&lt;a href=&quot;#&quot;&gt;Youtube&lt;/a&gt;&lt;/li&gt;
-		&lt;li class=&quot;rss&quot;&gt;&lt;a href=&quot;#&quot;&gt;Rss&lt;/a&gt;&lt;/li&gt;
-	&lt;/ul&gt;&lt;!--/ .social-icons --&gt;	
-
-&lt;/div&gt;
-</pre>
+<p>Other features 5 block regions where you can add your blocks. Visit yourdomain.com/admin/structure/block to add your own content to the defined block regions. Press "Add Block" to create a new custom blog, or select an existing block from the Disabled list below the defined block regions.</p>
 
 <h2>Thank You</h2>
 <p>Thank you very much for purchasing the Other Responsive Drupal 7 theme. Once again if you have any issues or feedback please connect via the <a href="http://themeforest.net/user/refaktor#from" target="_blank">ThemeForest author page</a>. Enjoy using Other!</p>
