@@ -93,153 +93,91 @@ This content type can be used to create a portfolio of projects on your site. A 
 <li><strong>Portfolio Website:</strong>Used to display the project website.</li>
 </ul>
 
+<p><strong>Template files</strong></p>
+<ul>
+	<li>/templates/node/node--portfolio.tpl.php</li>
+	<li>/templates/page/page--node--portfolio.tpl.php</li>
+</ul>
+
 <h4>View Blocks</h4>
 
 <p><strong>Portfolio Block - Example: <a href="http://refaktorthemes.com/other" target="_blank"> http://refaktorthemes.com/other</a></strong></p>
 <p>This is the standard Portfolio style which utilizes the "Portfolio Block" view. If you are not using the full demo or did not use the Custom Content module you can use the /assets/views/portfolio-block.txt (in the root of the download files) to import this view. Then simply place the "View: Portfolio Block" in the Content region and configure the block visibility settings to your liking.</p>
-<p><strong>Template files</strong></p>
 <ul>
-<li>/templates/node/node--view--portfolio--block.tpl.php</li>
-<li>/templates/views/views-view--portfolio-block.tpl.php</li>
-<li>/templates/views/views-view--unformated-portfolio-block.tpl.php</li>
+<p><strong>Template files:</strong></p>
+	<ul>
+		<li>/templates/node/node--view--portfolio--block.tpl.php</li>
+		<li>/templates/views/views-view--portfolio-block.tpl.php</li>
+		<li>/templates/views/views-view--unformated-portfolio-block.tpl.php</li>
+	</ul>
+	
+	<p><strong>Portfolio Filters:</strong></p>
+	<p>The Portfolio Block view includes support for an Isotope filter effect powered by Taxonomy terms. To utilize this effect visit /admin/structure/taxonomy and create a new vocabulary (example: Portfolio). After creating your vocabulary you can create the terms you wish to use to categorize your portfolio items. This taxonomy vocabulary can be linked to the Portfolio content type via a term reference field so you can select the category or categories you want to place your items into.</p>
+	
+	<p>The filters are powered by a view block called Portfolio Filters that should be added to the "Sidebar Primary" region. If you don't already have this view you can use the code /assets/views/portfolio-filters.txt to import this view block.</p>
+	
+	<p><strong>Template files:</strong></p>
+	<ul>
+	  <li>/templates/views/views-view-list--portfolio-filters.tpl.php</li>
+	  <li>/templates/views/views-view-fields--portfolio-filters.tpl.php</li>
+	</ul>
 </ul>
 
-<p><strong>Portfolio Filters:</strong></p>
-<p>The Portfolio Block view includes support for an Isotope filter effect powered by Taxonomy terms. To utilize this effect visit /admin/structure/taxonomy and create a new vocabulary (example: Portfolio). After creating your vocabulary you can create the terms you wish to use to categorize your portfolio items. This taxonomy vocabulary can be linked to the Portfolio content type via a term reference field so you can select the category or categories you want to place your items into.</p>
-
-<p>The filters are powered by a view block called Portfolio Filters that should be added to the "Sidebar Primary" region. If you don't already have this view you can use the code /assets/views/portfolio-filters.txt to import this view block.</p>
-
-<p><strong>Template files</strong></p>
+<p><strong>Portfolio Vertical - Examples: <a href="http://refaktorthemes.com/other/gallery" target="_blank"> http://refaktorthemes.com/other/gallery</a> and <a href="http://refaktorthemes.com/other/gallery-static" target="_blank"> http://refaktorthemes.com/other/gallery-static</a></strong></p>
+<p>This is the vertical Portfolio style which utilizes the "Portfolio Vertical" view. If you are not using the full demo or did not use the Custom Content module you can use the /assets/views/portfolio-vertical.txt (in the root of the download files) to import this view. Then simply place the "View: Portfolio Vertical" or "View: Portfolio Vertical: Static" block in the Content region and configure the block visibility settings to your liking.</p>
 <ul>
-<li>/templates/views/views-view-list--portfolio-filters.tpl.php</li>
-<li>/templates/views/views-view-fields--portfolio-filters.tpl.php</li>
-</ul>
+<p><strong>Template files:</strong></p>
+	<ul>
+		<li>/templates/views/views-view--portfolio-vertical.tpl.php</li>
+		<li>/templates/views/views-view--unformated-portfolio-vertical.tpl.php</li>
+	</ul>
+</ul>	
 
-<h4>Team</h4>
+<p><strong>Portfolio Horizontal - Examples: <a href="http://refaktorthemes.com/other/gallery-horizontal" target="_blank"> http://refaktorthemes.com/other/gallery-horizontal</a> and <a href="http://refaktorthemes.com/other/gallery-horizontal-static" target="_blank"> http://refaktorthemes.com/other/gallery-horizontal-static</a></strong></p>
+<p>This is the horizontal Portfolio style which utilizes the "Portfolio Vertical" view. If you are not using the full demo or did not use the Custom Content module you can use the /assets/views/portfolio-horizontal.txt (in the root of the download files) to import this view. Then simply place the "View: Portfolio Horizontal" or "View: Portfolio Horizontal: Static" block in the Content region and configure the block visibility settings to your liking.</p>
+<ul>
+<p><strong>Template files:</strong></p>
+	<ul>
+		<li>/templates/views/views-view--unformated-portfolio-horizontal.tpl.php</li>
+	</ul>
+</ul>	
+
+<h3>Team</h3>
 <img src="images/team.png"><br/><br/>
 
 <p><strong>Fields:</strong></p>
 <ul>
-<li>Active: This is a simple boolean field type used to set whether or not the FAQ item is open or "active" by default.</li>
+	<li><strong>Title:</strong> The default Drupal title field.</li>
+	<li><strong>Team Date:</strong> Used for the date your team member joined.</li>
+	<li><strong>Portfolio Position:</strong> Used for the position of your team member.</li>
+	<li><strong>Team Tagline:</strong> Used as a short description for your team member.</li>
+	<li><strong>Team Image:</strong> The default single image for your item used for both the single node and the view block.</li>
 </ul>
 
 <p><strong>Template files</strong></p>
 <ul>
-<li>/templates/node/node--faq.tpl.php</li>
-<li>/templates/views/views-view--faq.tpl.php</li>
-<li>/templates/views/views-view-unformatted--faq.tpl.php</li>
+	<li>/templates/node/node--team.tpl.php</li>
+	<li>/templates/page/page--node--team.tpl.php</li>
 </ul>
 
-<p>The export code /views-exports/faq.txt can be used to create the FAQ View which uses a Block display. This block can then be added to the region of your choice.</p>
+<h4>View Blocks</h4>
 
-<h4>Flexslider</h4>
-<img src="images/team.png"><br/><br/>
-
-<p><strong>Fields:</strong></p>
+<p><strong>Team Vertical - Examples: <a href="http://refaktorthemes.com/other/team-vertical" target="_blank"> http://refaktorthemes.com/other/team-vertical</a>.</strong></p>
+<p>This is the vertical Team style which utilizes the "Team Vertical" view. If you are not using the full demo or did not use the Custom Content module you can use the /assets/views/team-vertical.txt (in the root of the download files) to import this view. Then simply place the "View: Team Vertical" block in the Content region and configure the block visibility settings to your liking.</p>
 <ul>
-<li><strong>Image:</strong> The default Image field used for uploading the images.</li>
-<li><strong>URL:</strong> Use this field to link your slide to a URL.</li>
-<li><strong>Caption:</strong> Use this field to add a caption to your slide.</li>
-</ul>
+<p><strong>Template files:</strong></p>
+	<ul>
+		<li>/templates/views/views-view--team-vertical.tpl.php</li>
+	</ul>
+</ul>	
 
-<p><strong>Template files</strong></p>
-<ul>
-<li>/templates/node/node--flexslider.tpl.php</li>
-<li>/templates/views/views-view--flexslider.tpl.php</li>
-<li>/templates/views/views-view-unformatted--flexslider.tpl.php</li>
-</ul>
+<p><strong>Team Horizontal - Examples: <a href="http://refaktorthemes.com/other/team-horizontal" target="_blank"> http://refaktorthemes.com/other/team-horizontal</a>.</strong></p>
+<p>This is the horizontal Team style which utilizes the "Team Horizontal" view. If you are not using the full demo or did not use the Custom Content module you can use the /assets/views/team-horizontal.txt (in the root of the download files) to import this view. Then simply place the "View: Team Vertical" block in the Content region and configure the block visibility settings to your liking.</p>
 
-<p>The export code /views-exports/flexslider.txt can be used to create the Flexslider View which uses a Block display. This block can then be added to the region of your choice.</p>
+<p><strong>Team Masonry - Examples: <a href="http://refaktorthemes.com/other/team-masonry" target="_blank"> http://refaktorthemes.com/other/team-masonry</a>.</strong></p>
+<p>This is the masonry Team style which utilizes the "Team Masonry" view. If you are not using the full demo or did not use the Custom Content module you can use the /assets/views/team-masonry.txt (in the root of the download files) to import this view. Then simply place the "View: Team Masonry" block in the Content region and configure the block visibility settings to your liking.</p>
 
-<h4>Details Box</h4>
-<img src="images/details.png"><br/><br/>
 
-<p><strong>Fields:</strong></p>
-<ul>
-<li><strong>Detail Icon:</strong> The text class of the icon you want to use (see Icons section below for full list).</li>
-<li><strong>Detail Caption:</strong> The title caption you wish to use with your detail box.</li>
-<li><strong>Detail Info:</strong> A longer text description for your detail box.</li>
-<li><strong>Detail Color:</strong> If you wish to select a color for your box use the color picker.</li>
-<li><strong>Detail Color Type:</strong> Select list field for selecting the placement of the color if the "Detail Color" field is used. Use "Background" and "Hover" as the two options.</li>
-<li><strong>Detail URL:</strong> Add an optional URL for your detail box.</li>
-</ul>
-
-<p><strong>Template files</strong></p>
-<ul>
-<li>/templates/node/node--detail-box.tpl.php</li>
-<li>/templates/views/views-view--detail-boxes.tpl.php</li>
-<li>/templates/views/views-view-unformatted--detail-boxes.tpl.php</li>
-</ul>
-
-<p><strong>Icons:</strong></p>
-<ul>
-  <li>.icons-app				</li>
-  <li>.icons-shuffle			</li>
-  <li>.icons-monitor			</li>
-  <li>.icons-magnifying		</li>
-  <li>.icons-mail				</li>
-  <li>.icons-users			</li>
-  <li>.icons-present			</li>
-  <li>.icons-download			</li>
-  <li>.icons-upload		</li>
-  <li>.icons-in-tray		</li>
-  <li>.icons-cat				</li>
-  <li>.icons-cog				</li>
-  <li>.icons-polaroid			</li>
-  <li>.icons-electricity		</li>
-  <li>.icons-lightbulb		</li>
-  <li>.icons-graph-up			</li>
-  <li>.icons-pie-chart		</li>
-  <li>.icons-bar-chart		</li>
-  <li>.icons-disc-graph	</li>
-  <li>.icons-screwdriver		</li>
-  <li>.icons-sun				</li>
-  <li>.icons-coffee-cup		</li>
-  <li>.icons-shamrock			</li>
-  <li>.icons-target			</li>
-  <li>.icons-life-ring		</li>
-  <li>.icons-puzzle			</li>
-  <li>.icons-umbrella			</li>
-  <li>.icons-bomb				</li>
-  <li>.icons-speech-bubble	</li>
-  <li>.icons-link				</li>
-  <li>.icons-alarm-clock		</li>
-  <li>.icons-thumbs-up		</li>
-  <li>.icons-thumbs-down		</li>
-  <li>.icons-tick-circle		</li>
-  <li>.icons-cross-circle		</li>
-  <li>.icons-arrow			</li>
-  <li>.icons-heart			</li>
-  <li>.icons-wallet			</li>
-  <li>.icons-tick				</li>
-  <li>.icons-paint-brush		</li>
-  <li>.icons-network			</li>
-  <li>.icons-layout			</li>
-  <li>.icons-megaphone		</li>
-  <li>.icons-book				</li>
-  <li>.icons-calendar			</li>
-  <li>.icons-refresh			</li>
-  <li>.icons-earth			</li>
-  <li>.icons-house</li>
-</ul>
-
-<p>The export code /views-exports/detail-boxes.txt can be used to create the Detail Boxes View which uses a Block display. This block can then be added to the region of your choice.</p>
-
-<h4>AJAX Navigation</h4>
-
-<p>Example: <a href="http://refaktorthemes.com/Other/left-navigation" target="_blank">http://refaktorthemes.com/Other/left-navigation</a></p>
-
-<p><strong>Template files</strong></p>
-<ul>
-<li>/templates/node/node--view--ajax-content--block.tpl.php</li>
-<li>/templates/node/node--view--ajax-navigation--block.tpl.php</li>
-<li>/templates/views/views-view--ajax-content.tpl.php</li>
-<li>/templates/views/views-view--ajax-navigation.tpl.php</li>
-<li>/templates/views/views-view-unformatted--ajax-content.tpl.php</li>
-<li>/templates/views/views-view-unformatted--ajax-navigation.tpl.php</li>
-</ul>
-
-<p>The export code /views-exports/ajax-content.txt and /views-exports/ajax-navigation.txt can be used to create the Views. The Navigation block goes into the header of the content View as a global view region. The content block can then be added to the region of your choice.</p>
 
 <h2>Blog (posts)</h2>
 <p>The Other demo uses a View to display the article content type nodes. If you do not already have this View using one of our different installation methods you can use the code found in /views-exports/blog.txt to import the View and all its settings. To change the style of image on that View page you can use the Blog View Image option in the theme settings (/admin/appearance/settings/Other).</p>
