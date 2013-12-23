@@ -1,3 +1,9 @@
+<?php if (render($content['field_before_content_embed'])): ?>
+<div class="video-container">
+  <?php print render($content['field_before_content_embed']); ?>  
+</div>
+<?php endif; ?>
+
 <?php if (render($content['field_before_content'])) { print render($content['field_before_content']); } ?>
 <div class="clear break small"></div>
 
