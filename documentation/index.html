@@ -75,10 +75,13 @@ Option 2:
 
 <h2>Custom Content Types</h2>
 
-<h4>Portfolio</h4>
+<h3>Portfolio</h3>
+<p></p>
+This content type can be used to create a portfolio of projects on your site. A collection of portfolio nodes can be displayed in several styles of view blocks such as <a href="http://refaktorthemes.com/other" target="_blank"> http://refaktorthemes.com/other</a> or <a href="http://refaktorthemes.com/other/gallery" target="_blank"> http://refaktorthemes.com/other/gallery</a>. Below we will outline the fields used in this content type and the different view blocks and their corresponding theme templates.
+
+<h4>Fields:</h4>
 
 <img src="images/portfolio.png"><br/><br/>
-<p><strong>Fields:</strong></p>
 <ul>
 <li><strong>Title:</strong> The default Drupal title field.</li>
 <li><strong>Portfolio Tagline:</strong> Used as a short description for your portfolio item.</li>
@@ -90,8 +93,10 @@ Option 2:
 <li><strong>Portfolio Website:</strong>Used to display the project website.</li>
 </ul>
 
+<h4>View Blocks</h4>
+
 <p><strong>Portfolio Block - Example: <a href="http://refaktorthemes.com/other" target="_blank"> http://refaktorthemes.com/other</a></strong></p>
-<p>This is the standard Portfolio style which utilizes the "Portfolio Block" View. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/portfolio-block.txt to import this View. Then simply place the "View: Portfolio Block" in the Content region and configure the block visibility settings to your liking.</p>
+<p>This is the standard Portfolio style which utilizes the "Portfolio Block" view. If you are not using the full demo or did not use the Custom Content module you can use the /assets/views/portfolio-block.txt (in the root of the download files) to import this view. Then simply place the "View: Portfolio Block" in the Content region and configure the block visibility settings to your liking.</p>
 <p><strong>Template files</strong></p>
 <ul>
 <li>/templates/node/node--view--portfolio--block.tpl.php</li>
@@ -99,10 +104,10 @@ Option 2:
 <li>/templates/views/views-view--unformated-portfolio-block.tpl.php</li>
 </ul>
 
-<h4>Portfolio Filters:</h4>
+<p><strong>Portfolio Filters:</strong></p>
 <p>The Portfolio Block view includes support for an Isotope filter effect powered by Taxonomy terms. To utilize this effect visit /admin/structure/taxonomy and create a new vocabulary (example: Portfolio). After creating your vocabulary you can create the terms you wish to use to categorize your portfolio items. This taxonomy vocabulary can be linked to the Portfolio content type via a term reference field so you can select the category or categories you want to place your items into.</p>
 
-<p>The filters are powered by a View called Portfolio Filters that is placed in the View header as a global view area. If you don't already have this view you can use the code in /views_exports/portfolio-filters.txt to import as a View for placement in the View header of the Portfolio view.</p>
+<p>The filters are powered by a view block called Portfolio Filters that should be added to the "Sidebar Primary" region. If you don't already have this view you can use the code /assets/views/portfolio-filters.txt to import this view block.</p>
 
 <p><strong>Template files</strong></p>
 <ul>
@@ -110,8 +115,8 @@ Option 2:
 <li>/templates/views/views-view-fields--portfolio-filters.tpl.php</li>
 </ul>
 
-<h4>FAQ</h4>
-<img src="images/faq.png"><br/><br/>
+<h4>Team</h4>
+<img src="images/team.png"><br/><br/>
 
 <p><strong>Fields:</strong></p>
 <ul>
@@ -128,7 +133,7 @@ Option 2:
 <p>The export code /views-exports/faq.txt can be used to create the FAQ View which uses a Block display. This block can then be added to the region of your choice.</p>
 
 <h4>Flexslider</h4>
-<img src="images/flexslider.png"><br/><br/>
+<img src="images/team.png"><br/><br/>
 
 <p><strong>Fields:</strong></p>
 <ul>
