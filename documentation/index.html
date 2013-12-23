@@ -76,9 +76,9 @@ Option 2:
 <h2>Custom Content Types</h2>
 
 <h3>Portfolio</h3>
-<p></p>
+<p>
 This content type can be used to create a portfolio of projects on your site. A collection of portfolio nodes can be displayed in several styles of view blocks such as <a href="http://refaktorthemes.com/other" target="_blank"> http://refaktorthemes.com/other</a> or <a href="http://refaktorthemes.com/other/gallery" target="_blank"> http://refaktorthemes.com/other/gallery</a>. Below we will outline the fields used in this content type and the different view blocks and their corresponding theme templates.
-
+</p>
 <h4>Fields:</h4>
 
 <img src="images/portfolio.png"><br/><br/>
@@ -143,9 +143,12 @@ This content type can be used to create a portfolio of projects on your site. A 
 </ul>	
 
 <h3>Team</h3>
-<img src="images/team.png"><br/><br/>
+<p>
+This content type can be used to create a portfolio of team members on your site. A collection of team nodes can be displayed in several styles of view blocks such as <a href="http://refaktorthemes.com/other/team-vertical" target="_blank"> http://refaktorthemes.com/other/team-vertical</a> or <a href="http://refaktorthemes.com/other/team-horizontal" target="_blank"> http://refaktorthemes.com/other/team-horizontal</a>. Below we will outline the fields used in this content type and the different view blocks and their corresponding theme templates.
+</p>
 
 <p><strong>Fields:</strong></p>
+<img src="images/team.png"><br/><br/>
 <ul>
 	<li><strong>Title:</strong> The default Drupal title field.</li>
 	<li><strong>Team Date:</strong> Used for the date your team member joined.</li>
@@ -177,7 +180,26 @@ This content type can be used to create a portfolio of projects on your site. A 
 <p><strong>Team Masonry - Examples: <a href="http://refaktorthemes.com/other/team-masonry" target="_blank"> http://refaktorthemes.com/other/team-masonry</a>.</strong></p>
 <p>This is the masonry Team style which utilizes the "Team Masonry" view. If you are not using the full demo or did not use the Custom Content module you can use the /assets/views/team-masonry.txt (in the root of the download files) to import this view. Then simply place the "View: Team Masonry" block in the Content region and configure the block visibility settings to your liking.</p>
 
+<h3>Contact</h3>
+<p>
+This content type can be used to create a contact page such as the one seen at <a href="http://refaktorthemes.com/other/contact" target="_blank"> http://refaktorthemes.com/other/contact</a>. Below we will outline the fields used in this content type nd their corresponding theme template files.
+</p>
+<p><strong>Fields:</strong></p>
+<img src="images/contact.png"><br/><br/>
+<ul>
+	<li><strong>Contact Map:</strong> A long text field to embed a Google Map iFrame.</li>
+	<li><strong>Title:</strong> The default Drupal title field.</li>
+	<li><strong>Contact Tagline:</strong> Used as a short description for your contact page.</li>
+	<li><strong>Contact Info:</strong> Used for your basic contact information like address, phone number, etc.</li>
+	<li><strong>Background Image:</strong> Image upload field for an optional page body background image.</li>
+</ul>
 
+<p><strong>Template files:</strong></p>
+	<ul>
+		<li>/templates/page/page--node--contact.tpl.php</li>
+		<li>/templates/node/node--contact.tpl.php</li>
+	</ul>
+</ul>	
 
 <h2>Blog (posts)</h2>
 <p>The Other demo uses a View to display the article content type nodes. If you do not already have this View using one of our different installation methods you can use the code found in /views-exports/blog.txt to import the View and all its settings. To change the style of image on that View page you can use the Blog View Image option in the theme settings (/admin/appearance/settings/Other).</p>
