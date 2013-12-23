@@ -187,7 +187,7 @@ This content type can be used to create a contact page such as the one seen at <
 <p><strong>Fields:</strong></p>
 <img src="images/contact.png"><br/><br/>
 <ul>
-	<li><strong>Contact Map:</strong> A long text field to embed a Google Map iFrame.</li>
+	<li><strong>Contact Map:</strong> A long text field to embed a Google Map iFrame (<a href="https://maps.google.com/">https://maps.google.com/</a>)</li>
 	<li><strong>Title:</strong> The default Drupal title field.</li>
 	<li><strong>Contact Tagline:</strong> Used as a short description for your contact page.</li>
 	<li><strong>Contact Info:</strong> Used for your basic contact information like address, phone number, etc.</li>
@@ -200,6 +200,28 @@ This content type can be used to create a contact page such as the one seen at <
 		<li>/templates/node/node--contact.tpl.php</li>
 	</ul>
 </ul>	
+
+<h3>View Page</h3>
+<p>
+This is a very basic content type that should be used for any of your pages using view blocks as it strips any margins and paddings. Below we will outline the fields used in this content type nd their corresponding theme template files.
+</p>
+<p><strong>Fields:</strong></p>
+<ul>
+	<li><strong>Contact Map:</strong> A long text field to embed a Google Map iFrame (<a href="https://maps.google.com/">https://maps.google.com/</a>)</li>
+	<li><strong>Title:</strong> The default Drupal title field.</li>
+  <li><strong>Body:</strong> The default Drupal body field.</li>
+	<li><strong>Background Image:</strong> Image upload field for an optional page body background image.</li>
+</ul>
+
+<p><strong>Template files:</strong></p>
+	<ul>
+		<li>/templates/page/page--node--view-page.tpl.php</li>
+		<li>/templates/node/node--view-page.tpl.php</li>
+	</ul>
+</ul>	
+
+<p><strong>Map Embed Example:</strong></p>
+<pre>&lt;iframe width=&quot;425&quot; height=&quot;350&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; marginheight=&quot;0&quot; marginwidth=&quot;0&quot; src=&quot;https://maps.google.co.uk/maps?f=q&amp;amp;source=s_q&amp;amp;hl=en&amp;amp;geocode=&amp;amp;q=york&amp;amp;aq=&amp;amp;sll=52.8382,-2.327815&amp;amp;sspn=12.413292,18.764648&amp;amp;ie=UTF8&amp;amp;hq=&amp;amp;hnear=York,+United+Kingdom&amp;amp;t=m&amp;amp;z=13&amp;amp;ll=53.962301,-1.081884&amp;amp;output=embed&amp;iwloc=near&quot;&gt;&lt;/iframe&gt;</pre>
 
 <h2>Blog (posts)</h2>
 <p>The Other demo uses a View to display the article content type nodes. If you do not already have this View using one of our different installation methods you can use the code found in /views-exports/blog.txt to import the View and all its settings. To change the style of image on that View page you can use the Blog View Image option in the theme settings (/admin/appearance/settings/Other).</p>
