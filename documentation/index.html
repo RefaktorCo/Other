@@ -201,9 +201,12 @@ This content type can be used to create a contact page such as the one seen at <
 	</ul>
 </ul>	
 
+<p><strong>Map Embed Example:</strong></p>
+<pre>&lt;iframe width=&quot;425&quot; height=&quot;350&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; marginheight=&quot;0&quot; marginwidth=&quot;0&quot; src=&quot;https://maps.google.co.uk/maps?f=q&amp;amp;source=s_q&amp;amp;hl=en&amp;amp;geocode=&amp;amp;q=york&amp;amp;aq=&amp;amp;sll=52.8382,-2.327815&amp;amp;sspn=12.413292,18.764648&amp;amp;ie=UTF8&amp;amp;hq=&amp;amp;hnear=York,+United+Kingdom&amp;amp;t=m&amp;amp;z=13&amp;amp;ll=53.962301,-1.081884&amp;amp;output=embed&amp;iwloc=near&quot;&gt;&lt;/iframe&gt;</pre>
+
 <h3>View Page</h3>
 <p>
-This is a very basic content type that should be used for any of your pages using view blocks as it strips any margins and paddings. Below we will outline the fields used in this content type nd their corresponding theme template files.
+This is a very basic content type that should be used for any of your pages using view blocks as it strips any margins and paddings. Below we will outline the fields used in this content type and their corresponding theme template files.
 </p>
 <p><strong>Fields:</strong></p>
 <ul>
@@ -221,7 +224,7 @@ This is a very basic content type that should be used for any of your pages usin
 
 <h3>Basic Page</h3>
 <p>
-This content type can be used to create a contact page such as the one seen at <a href="http://refaktorthemes.com/other/contact" target="_blank"> http://refaktorthemes.com/other/contact</a>. Below we will outline the fields used in this content type nd their corresponding theme template files.
+This modified version of the default page content type can be used to create all of your normal pages. Below we will outline the fields used in this content type and their corresponding theme template files.
 </p>
 <p><strong>Fields:</strong></p>
 <img src="images/basic.png"><br/><br/>
@@ -230,7 +233,7 @@ This content type can be used to create a contact page such as the one seen at <
 	<li><strong>Body:</strong> The default Drupal body field.</li>
 	<li><strong>Background Image:</strong> Image upload field for an optional page body background image.</li>
 	<li><strong>Before Content:</strong> An image field for adding an image before the page title.</li>
-	<li><strong>Before Content Embed:</strong> A long text field that can be used for any kind of embeds such as Youtube videos. This will display before the page title and content.</li>
+	<li><strong>Before Content Embed:</strong> A long text field that can be used for any kind of embeds such as Youtube videos. This will display before the node title and content.</li>
 	
 </ul>
 
@@ -241,8 +244,29 @@ This content type can be used to create a contact page such as the one seen at <
 	</ul>
 </ul>	
 
-<p><strong>Map Embed Example:</strong></p>
-<pre>&lt;iframe width=&quot;425&quot; height=&quot;350&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; marginheight=&quot;0&quot; marginwidth=&quot;0&quot; src=&quot;https://maps.google.co.uk/maps?f=q&amp;amp;source=s_q&amp;amp;hl=en&amp;amp;geocode=&amp;amp;q=york&amp;amp;aq=&amp;amp;sll=52.8382,-2.327815&amp;amp;sspn=12.413292,18.764648&amp;amp;ie=UTF8&amp;amp;hq=&amp;amp;hnear=York,+United+Kingdom&amp;amp;t=m&amp;amp;z=13&amp;amp;ll=53.962301,-1.081884&amp;amp;output=embed&amp;iwloc=near&quot;&gt;&lt;/iframe&gt;</pre>
+<h3>Article</h3>
+<p>
+This modified version of the default article content type can be used to create all of your article nodes. Below we will outline the fields used in this content type and their corresponding theme template files.
+</p>
+<p><strong>Fields:</strong></p>
+<img src="images/article.png"><br/><br/>
+<ul>
+	<li><strong>Title:</strong> The default Drupal title field.</li>
+	<li><strong>Article Tagline:</strong> The default Drupal body field.</li>
+	<li><strong>Body:</strong> The default Drupal body field.</li>
+	<li><strong>Tags:</strong> The default Drupal tags taxonomy term reference field.</li>
+	<li><strong>Image:</strong> Image upload field for an optional article image.</li>
+	<li><strong>Article Embed:</strong> A long text field that can be used for any kind of embeds such as Youtube videos. This will display before the node title and content.</li>
+	
+</ul>
+
+<p><strong>Template files:</strong></p>
+	<ul>
+		<li>/templates/page/node--article.tpl.php</li>
+		<li>/templates/node/page--node--article.tpl.php</li>
+	</ul>
+</ul>	
+
 
 <h2>Blog (posts)</h2>
 <p>The Other demo uses a View to display the article content type nodes. If you do not already have this View using one of our different installation methods you can use the code found in /views-exports/blog.txt to import the View and all its settings. To change the style of image on that View page you can use the Blog View Image option in the theme settings (/admin/appearance/settings/Other).</p>
