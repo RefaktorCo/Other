@@ -1,2 +1,5 @@
+1.0.1 (1/05/14)
+  *Added missing viewport meta tag.
+
 1.0 (12/26/13)
   *Initial release.
