@@ -1,5 +1,6 @@
-1.0.1 (1/05/14)
+1.0.1 (1/15/14)
   *Added missing viewport meta tag.
+  *Updated Drupal Core in full install.
 
 1.0 (12/26/13)
   *Initial release.
