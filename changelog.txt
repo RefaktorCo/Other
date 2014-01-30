@@ -2,6 +2,7 @@
   *Added target="_blank" to Portfolio Website HTML tag. 
   *Fixed some issues with hook_form functions in template.php
   *Style improvements to add/edit comment page.
+  *Improvements to taxonomy pages.
 
 1.0.1 (1/15/14)
   *Added missing viewport meta tag.

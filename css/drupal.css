@@ -27,6 +27,15 @@
 	max-width: 1280px;
 }
 
+#taxonomy-page {
+	background: #fff;
+	max-width: 1280px;
+}
+
+#taxonomy-page .title {
+	text-align: center;
+}
+
 .mobile-logo img {
 	height: 38px;
 }

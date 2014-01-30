@@ -68,15 +68,33 @@ $counter = count($items);
 	
 	<div class="three_fourths">
 		<?php print render($content['body']); ?>
+		
+		<?php
+		  // Remove the "Add new comment" link on the teaser page or if the comment
+		  // form is being displayed on the same page.
+		  if ($teaser || !empty($content['comments']['comment_form'])) {
+		    unset($content['links']['comment']['#links']['comment-add']);
+		  }
+		  // Only display the wrapper div if there are links.
+		  $links = render($content['links']);
+		  if ($links):
+	  ?>
+	  <div class="link-wrapper">
+	    <?php print $links; ?>
+	  </div>
+	  <?php endif; ?>
+	
 	</div>
 	
 	<div class="one_fourth last">
-			<h6><?php echo t('Project Details'); ?></h6>
-			<p><strong><?php echo t('CLIENT'); ?> :</strong> <?php print render($content['field_portfolio_client']); ?></p>
-			<p><strong><?php echo t('DATE'); ?>:</strong> <?php print format_date($node->created, 'custom', 'M d, Y'); ?></p>
-			<p><strong><?php echo t('TAGS'); ?> :</strong> <?php print render($content['field_portfolio_category']); ?></p>
-			<p><strong><?php echo t('WEBSITE'); ?> :</strong> <a href="<?php print render($content['field_portfolio_website']); ?>" target="_blank"><?php print render($content['field_portfolio_website']); ?></a></p>
-		</div>
+		<h6><?php echo t('Project Details'); ?></h6>
+		<p><strong><?php echo t('CLIENT'); ?> :</strong> <?php print render($content['field_portfolio_client']); ?></p>
+		<p><strong><?php echo t('DATE'); ?>:</strong> <?php print format_date($node->created, 'custom', 'M d, Y'); ?></p>
+		<p><strong><?php echo t('TAGS'); ?> :</strong> <?php print render($content['field_portfolio_category']); ?></p>
+		<p><strong><?php echo t('WEBSITE'); ?> :</strong> <a href="<?php print render($content['field_portfolio_website']); ?>" target="_blank"><?php print render($content['field_portfolio_website']); ?></a></p>
+	</div>
+	
 		
-		<div class="clear"></div><!--CLEAR FLOATS-->
+	<div class="clear"></div><!--CLEAR FLOATS-->
+		
 </article>
