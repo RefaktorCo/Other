@@ -15,6 +15,7 @@ if ($prev != NULL) {
 /**
  * Slideshow variables.
  */
+$image_slide = ''; 
 if ($items = field_get_items('node', $node, 'field_portfolio_slideshow')) {
   if (count($items) == 1) {
     $image_slide = 'false';
