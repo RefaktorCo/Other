@@ -75,7 +75,7 @@ $counter = count($items);
 			<p><strong><?php echo t('CLIENT'); ?> :</strong> <?php print render($content['field_portfolio_client']); ?></p>
 			<p><strong><?php echo t('DATE'); ?>:</strong> <?php print format_date($node->created, 'custom', 'M d, Y'); ?></p>
 			<p><strong><?php echo t('TAGS'); ?> :</strong> <?php print render($content['field_portfolio_category']); ?></p>
-			<p><strong><?php echo t('WEBSITE'); ?> :</strong> <a href="<?php print render($content['field_portfolio_website']); ?>"><?php print render($content['field_portfolio_website']); ?></a></p>
+			<p><strong><?php echo t('WEBSITE'); ?> :</strong> <a href="<?php print render($content['field_portfolio_website']); ?>" target="_blank"><?php print render($content['field_portfolio_website']); ?></a></p>
 		</div>
 		
 		<div class="clear"></div><!--CLEAR FLOATS-->

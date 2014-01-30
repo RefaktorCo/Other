@@ -133,34 +133,26 @@ function other_menu_local_tasks(&$variables) {
 function other_form_contact_site_form_alter(&$form, &$form_state, $form_id) {
   global $user;
   
-  $form['name'] = array(
-	  '#type' => 'textfield',
-	  '#maxlength' => 255,
-	  '#attributes' =>array('placeholder' => t('name')),
-	  '#required' => TRUE,
-	);
+	/* Remove field title and add placeholder for "Name" field */
+	$form['name']['#attributes']['placeholder'] = t( 'name' );
+	$form['name']['#title'] = FALSE;
+	$form['name']['#required'] = TRUE;
+	
+	/* Remove field title and add placeholder for "Mail" field */
+	$form['mail']['#attributes']['placeholder'] = t( 'email' );
+	$form['mail']['#title'] = FALSE;
+	$form['mail']['#required'] = TRUE;
   
-	$form['mail'] = array(
-	  '#type' => 'textfield',
-	  '#maxlength' => 255,
-	  '#attributes' =>array('placeholder' => t('email')),
-	  '#required' => TRUE,
-	);
+  /* Remove field title and add placeholder for "Subject" field */
+	$form['subject']['#attributes']['placeholder'] = t( 'subject' );
+	$form['subject']['#title'] = FALSE;
+	$form['subject']['#required'] = TRUE;
 	
-	$form['subject'] = array(
-	  '#type' => 'textfield',
-	  '#maxlength' => 255,
-	  '#attributes' =>array('placeholder' => t('subject')),
-	  '#required' => TRUE,
-	);
-	
-	$form['message'] = array(
-	  '#type' => 'textarea',
-	  '#maxlength' => 255,
-	  '#attributes' =>array('placeholder' => t('message')),
-	  '#required' => TRUE,
-	);
-
+	/* Remove field title and add placeholder for "Message" field */
+	$form['message']['#attributes']['placeholder'] = t( 'message' );
+	$form['message']['#title'] = FALSE;
+	$form['message']['#required'] = TRUE;
+  		
 }
 
 /**
@@ -214,32 +206,26 @@ function other_item_list($vars) {
 /**
 * Implements hook_form_comment_form_alter().
 */
-function other_form_comment_form_alter(&$form, &$form_state, $form_id) {
-  global $user;
-  
-  if (!$user->uid) {
-  $form['author']['name'] = array(
-	  '#type' => 'textfield',
-	  '#maxlength' => 255,
-	  '#attributes' =>array('placeholder' => t('name')),
-	  '#required' => TRUE,
-	);
-	}
-	
-	$form['subject'] = array(
-	  '#type' => 'textfield',
-	  '#maxlength' => 255,
-	  '#attributes' =>array('placeholder' => t('subject')),
-	  '#required' => TRUE,
-	);
-	
-	$form['comment_body'] = array(
-	  '#type' => 'textarea',
-	  '#maxlength' => 255,
-	  '#attributes' =>array('placeholder' => t('comment')),
-	  '#required' => TRUE,
-	);
+function other_form_comment_form_alter(&$form, &$form_state) {
 
+   /* Remove field title and add placeholder for "Author" field */
+	$form['author']['name']['#attributes']['placeholder'] = t( 'name' );
+  $form['author']['name']['#title'] = FALSE;
+	
+  /* Remove the "your name" elements for authenticated users */
+  if ($form['is_anonymous']['#value'] == false) {
+    $form['author']['#access'] = FALSE; 
+  }
+  
+  /* Remove field title and add placeholder for "Subject" field */
+	$form['subject']['#attributes']['placeholder'] = t( 'subject' );
+	$form['subject']['#title'] = FALSE;
+	$form['subject']['#required'] = FALSE;
+	
+	/* Remove field title and add placeholder for "Comment Body" field */
+	$form['comment_body'][LANGUAGE_NONE][0]['#attributes']['placeholder'] = t( 'comment' );
+	$form['comment_body']['und'][0]['#title'] = FALSE;
+	
 }
 
 /**
@@ -247,8 +233,6 @@ function other_form_comment_form_alter(&$form, &$form_state, $form_id) {
  */
 function other_field($variables) {
 
-  $customFields = array('field_portfolio_video','field_portfolio_category','field_portfolio_client','field_portfolio_website');
- 
   $output = '';
  
   // Render the label, if it's not hidden.
