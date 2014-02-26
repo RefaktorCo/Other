@@ -19,11 +19,42 @@ function other_form_system_theme_settings_alter(&$form, &$form_state) {
     '#weight' => '-10',
   );
   
+  // Default Drupal Settings    
+  $form['options']['drupal_default_settings'] = array(
+		'#type' => 'fieldset',
+		'#title' => t('Drupal Core Settings'),
+	);
+	
+	  // "Toggle Display" 
+		$form['options']['drupal_default_settings']['theme_settings'] = $form['theme_settings'];
+		
+		// "Unset default Toggle Display settings" 
+		unset($form['theme_settings']);
+		
+		// "Logo Image Settings" 
+		$form['options']['drupal_default_settings']['logo'] = $form['logo'];
+		
+		// "Unset default Logo Image Settings" 
+		unset($form['logo']);
+		
+		// "Shortcut Icon Settings" 
+		$form['options']['drupal_default_settings']['favicon'] = $form['favicon'];   
+		
+		// "Unset default Shortcut Icon Settings" 
+		unset($form['favicon']);
+  
   // General
   $form['options']['general'] = array(
     '#type' => 'fieldset',
     '#title' => t('General'),
   );
+  
+    // Ajax Loader
+    $form['options']['general']['ajax_loader'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Ajax Content Window'),
+      '#default_value' => theme_get_setting('ajax_loader'),
+    );
                 
 	  $form['options']['general']['mobile_logo_path'] = array(
       '#type' => 'textfield',

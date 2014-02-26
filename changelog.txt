@@ -2,6 +2,7 @@
   *Minor tweaks to Portfolio node template file.
   *Fixed issue with third level navigation.
   *Implemented custom node pagination function.
+  *Added AJAX content window theme setting.
 
 1.0.2 (1/30/14)
   *Added target="_blank" to Portfolio Website HTML tag. 

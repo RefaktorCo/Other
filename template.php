@@ -21,6 +21,7 @@ function other_js_alter(&$js) {
  * Overrides theme_process_page().
  */
 function other_process_page(&$variables) {	
+  global $parent_root;
   // Assign site name and slogan toggle theme settings to variables.
   $variables['disable_site_name']   = theme_get_setting('toggle_name') ? FALSE : TRUE;
   $variables['disable_site_slogan'] = theme_get_setting('toggle_slogan') ? FALSE : TRUE;
@@ -31,6 +32,11 @@ function other_process_page(&$variables) {
   if ($variables['disable_site_slogan']) {
     $variables['site_slogan'] = filter_xss_admin(variable_get('site_slogan', ''));
   }
+  
+  if ( theme_get_setting('ajax_loader') == "1" ) {
+    drupal_add_js($parent_root .'/js/ajax.js');
+  }
+  
 }	
 
 /**
