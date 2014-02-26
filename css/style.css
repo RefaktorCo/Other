@@ -282,6 +282,10 @@ nav li:hover > a {
 	padding-left: 35px; color: #e74c3c; border-color: #e74c3c;
 }
 
+nav li.current-menu-item > a, nav li.current-menu-parent > a {
+	color: #e74c3c; border-color: #e74c3c;
+}
+
 nav li {
 	position: relative; background: #fff;
 }
@@ -294,11 +298,11 @@ nav ul li ul {
 	display: none; position: absolute; left: 100%; min-width: 225px; top: -1px; z-index: 999; border: 1px solid #c5c5c5; box-shadow: 2px 2px 1px 0px rgba(40, 40, 40, 0.1);
 }
 
-nav ul li ul li:last-child a {
+nav ul li ul li:last-child > a {
 	border: none;
 }
 
-nav ul li:hover ul {
+nav ul li:hover > ul {
 	display: block;
 }
 

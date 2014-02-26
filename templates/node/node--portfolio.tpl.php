@@ -67,6 +67,7 @@ $counter = count($items);
 		<h6 class="remove-bottom"><?php print render($content['field_portfolio_tagline']); ?></h6>
 	</div>
 	
+	<?php if (render($content['body'])): ?>
 	<div class="three_fourths">
 		<?php print render($content['body']); ?>
 		
@@ -86,13 +87,20 @@ $counter = count($items);
 	  <?php endif; ?>
 	
 	</div>
+	<?php endif; ?>
 	
 	<div class="one_fourth last">
 		<h6><?php echo t('Project Details'); ?></h6>
-		<p><strong><?php echo t('CLIENT'); ?> :</strong> <?php print render($content['field_portfolio_client']); ?></p>
+		<?php if (render($content['field_portfolio_client'])): ?>
+		  <p><strong><?php echo t('CLIENT'); ?> :</strong> <?php print render($content['field_portfolio_client']); ?></p>
+		<?php endif; ?>  
 		<p><strong><?php echo t('DATE'); ?>:</strong> <?php print format_date($node->created, 'custom', 'M d, Y'); ?></p>
-		<p><strong><?php echo t('TAGS'); ?> :</strong> <?php print render($content['field_portfolio_category']); ?></p>
-		<p><strong><?php echo t('WEBSITE'); ?> :</strong> <a href="<?php print render($content['field_portfolio_website']); ?>" target="_blank"><?php print render($content['field_portfolio_website']); ?></a></p>
+		<?php if (render($content['field_portfolio_category'])): ?>
+		  <p><strong><?php echo t('TAGS'); ?> :</strong> <?php print render($content['field_portfolio_category']); ?></p>
+		<?php endif; ?>  
+		<?php if (render($content['field_portfolio_website'])): ?>
+		  <p><strong><?php echo t('WEBSITE'); ?> :</strong> <a href="<?php print render($content['field_portfolio_website']); ?>" target="_blank"><?php print render($content['field_portfolio_website']); ?></a></p>
+		<?php endif; ?>  
 	</div>
 	
 		
