@@ -1,26 +1,11 @@
-<?php
-/**
- * Initialize pagination.
- */
-$next = other_pagination($node, 'n');
-$prev = other_pagination($node, 'p');
-
-if ($next != NULL) { 
-  $next_url = url('node/' . $next, array('absolute' => TRUE));
-}
-if ($prev != NULL) { 
-  $prev_url = url('node/' . $prev, array('absolute' => TRUE));
-}
-?>
-
 <div id="article-wrap">
 	<div class="article-nav blog">
-	  <?php if ($prev != NULL): ?>
-		  <a href="<?php echo $prev_url; ?>" class="post-nav"><i class="icon-angle-left"></i></a>
+	  <?php if ( other_node_pagination($node, 'p') != NULL ) : ?>
+		  <a href="<?php print url('node/' . other_node_pagination($node, 'p'), array('absolute' => TRUE)); ?>" class="post-nav"><i class="icon-angle-left"></i></a>
 		<?php endif; ?>
 		<a href="#" class="close"><i class="icon-angle-right"></i><i class="icon-angle-left"></i></a>
-		<?php if ($next != NULL): ?>
-		  <a href="<?php echo $next_url; ?>" class="post-nav"><i class="icon-angle-right"></i></a>
+		<?php if ( other_node_pagination($node, 'n') != NULL ) : ?>
+		  <a href="<?php print url('node/' . other_node_pagination($node, 'n'), array('absolute' => TRUE)); ?>" class="post-nav"><i class="icon-angle-right"></i></a>
 		<?php endif; ?>
 	</div>
 	

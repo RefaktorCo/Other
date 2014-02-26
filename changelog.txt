@@ -1,6 +1,7 @@
 1.0.3 (02/27/14)
-  *Added some conditional statements around some field declarations in node--portfolio.tpl.
+  *Minor tweaks to Portfolio node template file.
   *Fixed issue with third level navigation.
+  *Implemented custom node pagination function.
 
 1.0.2 (1/30/14)
   *Added target="_blank" to Portfolio Website HTML tag. 

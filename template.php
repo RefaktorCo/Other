@@ -52,7 +52,6 @@ function other_preprocess_page(&$vars, $hook) {
     $vars['theme_hook_suggestions'][] = 'page--taxonomy--vocabulary--' . $term->vid;
   }
   
-  
 }
 
 /**
@@ -202,6 +201,36 @@ function other_item_list($vars) {
   return theme_item_list($vars);
 }
 
+/**
+ * Theme node pagination function().
+ */
+function other_node_pagination($node, $mode = 'n') {
+  $query = new EntityFieldQuery();
+	$query
+    ->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', $node->type);
+  $result = $query->execute();
+  $nids = array_keys($result['node']);
+  
+  while ($node->nid != current($nids)) {
+    next($nids);
+  }
+  
+  switch($mode) {
+    case 'p':
+      prev($nids);
+    break;
+		
+    case 'n':
+      next($nids);
+    break;
+		
+    default:
+    return NULL;
+  }
+  
+  return current($nids);
+}
 
 /**
 * Implements hook_form_comment_form_alter().
@@ -341,39 +370,6 @@ function other_field($variables) {
 }
 
 /**
- * Create pagination function using prev_next API().
- */
-function other_pagination($node, $mode = 'n') {
-  if (!function_exists('prev_next_nid')) {
-    return NULL;
-  }
- 
-  switch($mode) {
-    case 'p':
-      $n_nid = prev_next_nid($node->nid, 'prev');
-      $link_text = "Previous post";
-    break;
-		
-    case 'n':
-      $n_nid = prev_next_nid($node->nid, 'next');
-      $link_text = "Next post";
-    break;
-		
-    default:
-    return NULL;
-  }
- 
-  if ($n_nid) {
-    $n_node = '';
-    $n_node = node_load($n_nid);
-   
-	  $id =  $n_node->nid; 
-	  return $id; 
-      
-   }
-}
-
-/**
  * User CSS function. Separate from other_preprocess_html so function can be called directly before </head> tag.
  */
 function other_user_css() {
@@ -383,5 +379,3 @@ function other_user_css() {
   echo "</style>";
   echo "<!-- End user defined CSS -->";	
 }
-
-?>
