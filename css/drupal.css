@@ -40,6 +40,10 @@
 	height: 38px;
 }
 
+#article-wrap {
+  overflow: hidden;
+}
+
 .contact-form .form-item {
 	margin: 0;
 }

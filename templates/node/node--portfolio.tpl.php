@@ -34,9 +34,7 @@ $counter = count($items);
 
 <?php if (!render($content['field_portfolio_video']) && ($image_slide == 'true')): ?>
   <ul class="rslides">
-  <?php while ($img_count < $counter) { ?>
-    <li><img src="<?php echo file_create_url($node->field_portfolio_slideshow['und'][$img_count]['uri']); ?>" alt="" /></li>
-  <?php $img_count++; } ?>		
+  <?php print render($content['field_portfolio_slideshow']); ?>	
   </ul>  
   <div class="clear break small"></div>
 <?php endif; ?>

@@ -1,3 +1,6 @@
+1.0.4 (03/11/14)
+  *Changed output of portfolio slideshow in node--portfolio.tpl.php.
+
 1.0.3 (02/27/14)
   *Minor tweaks to Portfolio node template file.
   *Fixed issue with third level navigation.
@@ -6,7 +9,7 @@
 
 1.0.2 (1/30/14)
   *Added target="_blank" to Portfolio Website HTML tag. 
-  *Fixed some issues with hook_form functions in template.php
+  *Fixed some issues with hook_form functions in template.php.
   *Style improvements to add/edit comment page.
   *Improvements to taxonomy pages.
   *Fixed responsive issue with portfolio/article node templates. 
