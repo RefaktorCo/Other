@@ -2,6 +2,19 @@
 	display: none;
 }
 
+.center {
+  display: block;
+  height: auto;
+}
+
+.grid.portfolio li a, .more-hover a {
+  overflow: hidden;
+}
+
+.grid.portfolio li a h4 {
+	margin-top: 0px;
+}
+
 #site-name {
 	text-align: center;
   font-size: 46px;
@@ -173,6 +186,10 @@ input.form-checkbox {
 
 #admin-menu-wrapper {
 	padding: 5px 0px;
+}
+
+.rslides img {
+  width: auto;
 }
 
 @media only screen and (max-width: 860px) {

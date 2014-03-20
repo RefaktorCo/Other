@@ -1,5 +1,6 @@
-1.0.4 (03/11/14)
+1.0.4 (03/20/14)
   *Changed output of portfolio slideshow in node--portfolio.tpl.php.
+  *Fixed several responsive bugs related to portfolio hover overlay.
 
 1.0.3 (02/27/14)
   *Minor tweaks to Portfolio node template file.

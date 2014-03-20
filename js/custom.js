@@ -1,3 +1,24 @@
+function header_scroll(){
+	if( jQuery(window).width() > 767 && !( jQuery('html').hasClass('ie9') ) ){
+	
+		jQuery('header#main').css({ 'min-height' : jQuery(window).height() });
+		
+		if( jQuery('header#main .header-wrap').length == 0 )
+			jQuery('header#main').wrapInner("<div class='header-wrap'></div>");
+		
+		var innerHeight = jQuery('.header-wrap').height();
+		var documentHeight = jQuery(document).height();
+		jQuery(window).scroll(function(){
+			if( jQuery(window).scrollTop() < documentHeight - innerHeight ){
+				jQuery('.header-wrap').css({ 'position' : 'fixed', 'top' : '0' });
+			} else {
+				jQuery('.header-wrap').css({ 'position' : 'absolute', 'top' : documentHeight - innerHeight });
+			}
+		});
+		
+	}
+}
+
 /*-----------------------------------------------------------------------------------*/
 /*	LOADER
 /*-----------------------------------------------------------------------------------*/
@@ -80,10 +101,13 @@ jQuery(document).ready(function($){
 /*-----------------------------------------------------------------------------------*/
 jQuery(window).load(function($){
 'use strict';
-
-	jQuery('ul.grid').isotope({
+	
+	var $container = jQuery('ul.grid');
+	
+	$container.isotope({
 		itemSelector : 'li',
-		transformsEnabled : false
+		transformsEnabled : false,
+		onLayout: center_items
 	});
 	
 	jQuery('.filters a').click(function(){
@@ -101,19 +125,26 @@ jQuery(window).load(function($){
 	
 	jQuery(window).trigger('resize');
 	
-	jQuery('header').height( jQuery(document).height() );
+	jQuery('header#main').height( jQuery(document).height() );
 	
 	jQuery(window).resize(function(){
-		jQuery('header').height( jQuery(window).height() );
+		jQuery('header#main').height( jQuery(window).height() );
 		setTimeout(function(){
-			jQuery('header').height( jQuery(document).height() );
+			jQuery('header#main').height( jQuery(document).height() );
 		}, 900);
 		
 		jQuery('#vertical, #vertical ul').height( jQuery(window).height() );
-
 	});
 	
 });
+
+function center_items($container){
+	jQuery($container).find('.center').each(function(){
+		var parentHeight = jQuery(this).parent().outerHeight() / 2;
+		var thisHeight = jQuery(this).height() / 2;
+		jQuery(this).css('margin-top', parentHeight - thisHeight);
+	});
+}
 /*-----------------------------------------------------------------------------------*/
 /*	HOVER DIR
 /*-----------------------------------------------------------------------------------*/
@@ -132,7 +163,7 @@ jQuery(document).ready(function($){
 'use strict';
 
 	$('.gallery.animate li').hover(function(){
-		$('.gallery li').not(this).stop().animate({ 'opacity' : '0.3' }, 200);
+		$('.gallery li').not(this).stop().animate({ 'opacity' : '0.7' }, 200);
 	}, function(){
 		$('.gallery li').stop().animate({ 'opacity' : '1' }, 200);
 	});
@@ -229,40 +260,22 @@ jQuery(document).ready(function($){
 
 });
 /*-----------------------------------------------------------------------------------*/
-/*	CONTACT FORM
+/*	header#main
 /*-----------------------------------------------------------------------------------*/
-jQuery(document).ready(function($){
-'use strict';
-
-	//CONTACT FORM
-		$('#contactform').submit(function(){
+jQuery(window).load(function($){
 	
-			var action = $(this).attr('action');
+	header_scroll();
+	center_items();
 	
-			$("#message").slideUp(750,function() {
-			$('#message').hide();
+	jQuery(window).resize(function(){
+		center_items();
+	});
 	
-	 		$('#submit').attr('disabled','disabled');
-	
-			$.post(action, {
-				name: $('#name').val(),
-				email: $('#email').val(),
-				website: $('#website').val(),
-				comments: $('#comments').val()
-			},
-				function(data){
-					document.getElementById('message').innerHTML = data;
-					$('#message').slideDown('slow');
-					$('#submit').removeAttr('disabled');
-					if(data.match('success') != null) $('#contactform').slideUp('slow');
-					$(window).trigger('resize');
-				}
-			);
-	
-			});
-	
-			return false;
-	
-		});
-	
+	jQuery('ul.grid.portfolio li, .more-hover').hover(function(){
+		var parentHeight = jQuery(this).height() / 2;
+		var thisHeight = 35;
+		jQuery(this).find('.center').css('margin-top', parentHeight - thisHeight);
+	}, function(){
+		//nothing
+	});
 });
