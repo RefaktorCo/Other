@@ -189,7 +189,9 @@ input.form-checkbox {
 }
 
 .rslides img {
-  width: auto;
+
+  float: none;
+  margin: auto;
 }
 
 @media only screen and (max-width: 860px) {
