@@ -6,8 +6,10 @@
 		<img src="<?php echo file_create_url($node->field_image['und'][0]['uri']); ?>" alt="">
 		<div>
 			<a href="<?php echo $node_url; ?>">
-				<h4 class="heavy remove-bottom"><?php echo $title; ?></h4>
-				<p><?php print strtolower(render($content['field_tags'])); ?><?php if ($comment_count > 0): ?>, <?php echo $comment_count;?> <?php echo t('comment'); ?><?php if ($comment_count > 1) { echo "s"; }?><?php endif; ?></p>
+			  <span class="center">
+					<h4 class="heavy remove-bottom"><?php echo $title; ?></h4>
+					<p><?php print strtolower(render($content['field_tags'])); ?><?php if ($comment_count > 0): ?>, <?php echo $comment_count;?> <?php echo t('comment'); ?><?php if ($comment_count > 1) { echo "s"; }?><?php endif; ?></p>
+			  </span>
 			</a>
 		</div>
 	</div>

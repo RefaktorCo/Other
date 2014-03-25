@@ -11,7 +11,7 @@
   overflow: hidden;
 }
 
-.grid.portfolio li a h4 {
+.grid.portfolio li a h4, .more-hover a h4 {
 	margin-top: 0px;
 }
 
