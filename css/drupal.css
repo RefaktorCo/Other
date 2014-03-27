@@ -189,7 +189,7 @@ input.form-checkbox {
 }
 
 .rslides img {
-
+  width: auto;
   float: none;
   margin: auto;
 }
