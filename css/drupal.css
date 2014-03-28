@@ -178,16 +178,6 @@ input.form-checkbox {
 .etabs li a { font-size: 12px; display: block; padding: 0 10px; outline: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none; transition: none; border-bottom: none; }
 .etabs li.active { padding: 0; padding-top: 1px; position: relative; top: 1px; display: inline-block; background: #fff; margin: 0; box-shadow: none; border-bottom: none; }
 
-#admin-menu {
-  font-size: 10px;
-  font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
-  text-align: left;
-}
-
-#admin-menu-wrapper {
-	padding: 5px 0px;
-}
-
 .rslides img {
   width: auto;
   float: none;

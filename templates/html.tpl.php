@@ -25,6 +25,10 @@ not-ie" lang="<?php print $language->language; ?>" dir="<?php print $language->d
 <!-- Web Fonts  -->
 <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
 
+<?php if ( (theme_get_setting('ajax_loader') == "1") ): ?>
+	<script type='text/javascript' src='<?php global $parent_root; echo $parent_root; ?>/js/ajax.js'></script>
+<?php endif; ?>
+
 <?php other_user_css(); ?>  
 
 </head>
