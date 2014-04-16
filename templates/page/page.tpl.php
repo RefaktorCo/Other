@@ -60,7 +60,7 @@
     <?php print render($page['sidebar_secondary']); ?>
 	<?php endif; ?>
 </header>
-
+<?php print render($page['before_content']); ?>
 <div id="basic-page" class="content-wrapper">
 	<div id="loader"></div>
 	<?php if ($messages): ?>
@@ -86,7 +86,7 @@
       <?php print render($action_links); ?>
     </ul>
   <?php endif; ?>
-  <?php print render($page['before_content']); ?>
+  
 	<?php print render($page['content']); ?>
 </div>
 
