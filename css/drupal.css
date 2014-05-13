@@ -11,10 +11,6 @@
   overflow: hidden;
 }
 
-.grid.portfolio li a h4, .more-hover a h4 {
-	margin-top: 0px;
-}
-
 #site-name {
 	text-align: center;
   font-size: 46px;
