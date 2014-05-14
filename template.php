@@ -7,7 +7,7 @@ $theme_root = base_path() . path_to_theme();
 $parent_root = base_path() . drupal_get_path('theme', 'other');
 
 /**
- * Modify theme_js_alter()
+ * Modify hook_js_alter()
  */
 function other_js_alter(&$js) {
   if (isset($js['misc/jquery.js'])) {
