@@ -5,7 +5,7 @@
 	  
 	  <?php if (render($content['field_image'])): ?>
 		<div class="more-hover">
-			<img src="<?php echo file_create_url($node->field_image['und'][0]['uri']); ?>" alt="">
+			<?php print render($content['field_image']); ?>
 			<div>
 				<a href="<?php echo $node_url; ?>">
 				  <span class="center">

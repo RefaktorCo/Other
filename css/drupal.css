@@ -142,7 +142,7 @@ input.form-checkbox {
 	margin-bottom: 25px;
 }
 
-#article-wrap .field-type-image, #single-team .field-type-image, .single-portfolio-img {
+#article-wrap .field-type-image, #single-team .field-type-image, .single-portfolio-img, .article-image {
 	text-align: center;
 }
 
