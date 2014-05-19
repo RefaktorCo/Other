@@ -1,6 +1,7 @@
-1.0.6 (05/16/14)
+1.0.6 (05/19/14)
 	*Modified image field output in several template files.
-
+	*Updated node paginaiton function to only query published nodes.
+	
 1.0.5 (05/14/14)
   *Updated Drupal core in full install.
   *Now calling jQuery from theme file rather than Google CDN to fix issue related to PHP 5.3 and JS aggregation.

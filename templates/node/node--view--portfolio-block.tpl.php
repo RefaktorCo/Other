@@ -1,4 +1,4 @@
-<li class="<?php print str_replace(',-', ' ', str_replace(' ', '-',strip_tags(render($content['field_portfolio_category'])))); ?>">
+<li class="<?php print str_replace('&amp;', 'and', str_replace(',-', ' ', str_replace(' ', '-',strip_tags(render($content['field_portfolio_category']))))); ?>">
 	<?php print render($content['field_portfolio_image']); ?>
 	<div>
 		<a href="<?php print $node_url; ?>">

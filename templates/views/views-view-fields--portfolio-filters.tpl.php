@@ -24,5 +24,5 @@
 ?>
 
 <?php foreach ($fields as $id => $field): ?>
-<li><a href="#" data-href=".<?php print str_replace(' ', '-', $field->content); ?>"><?php print $field->content; ?></a></li>
+<li><a href="#" data-href=".<?php print str_replace('&amp;', 'and', str_replace(' ', '-', $field->content)); ?>"><?php print $field->content; ?></a></li>
 <?php endforeach; ?>
