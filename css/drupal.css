@@ -11,6 +11,10 @@
   overflow: hidden;
 }
 
+.gallery-details .center {
+	top: 0;
+}
+
 #site-name {
 	text-align: center;
   font-size: 46px;

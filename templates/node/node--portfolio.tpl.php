@@ -2,18 +2,18 @@
 /**
  * Slideshow variables.
  */
-$image_slide = ''; 
-if ($items = field_get_items('node', $node, 'field_portfolio_slideshow')) {
-  if (count($items) == 1) {
+$image_slide = 'false'; 
+$slide_items = field_get_items('node', $node, 'field_portfolio_slideshow');
+if (!empty($slide_items)) {
+  if (count($slide_items) == 1) {
     $image_slide = 'false';
   }
-  elseif (count($items) > 1) {
+  elseif (count($slide_items) > 1) {
     $image_slide = 'true';
   }
 }
-
 $img_count = 0;
-$counter = count($items);
+$counter = count($slide_items);
 ?>
 
 <div class="article-nav">

@@ -207,7 +207,7 @@ $('.view-background').click(function(){
 jQuery(document).ready(function($){
 'use strict';
 
-		$('.tab-container').easytabs();
+	$('.tab-container').easytabs();
 
 });
 /*-----------------------------------------------------------------------------------*/
@@ -216,9 +216,9 @@ jQuery(document).ready(function($){
 jQuery(document).ready(function($){
 'use strict';
 
-		$('.alert i').click(function(){
-			$(this).parent().slideUp();
-		});
+	$('.alert i').click(function(){
+		$(this).parent().slideUp();
+	});
 
 });
 /*-----------------------------------------------------------------------------------*/
@@ -227,59 +227,21 @@ jQuery(document).ready(function($){
 jQuery(document).ready(function($){
 'use strict';
 
-		$('.accordion > dd.active').show();
-		  
-		$('.accordion > dt > a').click(function() {
-			if( $(this).parent().hasClass('active') ){
-				$(this).parents('.accordion').find('dt').removeClass('active');
-				$(this).parents('.accordion').find('dd').removeClass('active').slideUp();
-				return false;
-			} else {
-				$(this).parents('.accordion').find('dt').removeClass('active');
-				$(this).parents('.accordion').find('dd').removeClass('active').slideUp();
-				$(this).parent().addClass('active').next().addClass('active').slideDown();
-				return false;
-			}
-		});
-
-});
-/*-----------------------------------------------------------------------------------*/
-/*	CONTACT FORM
-/*-----------------------------------------------------------------------------------*/
-jQuery(document).ready(function($){
-'use strict';
-
-	//CONTACT FORM
-		$('#contactform').submit(function(){
-	
-			var action = $(this).attr('action');
-	
-			$("#message").slideUp(750,function() {
-			$('#message').hide();
-	
-	 		$('#submit').attr('disabled','disabled');
-	
-			$.post(action, {
-				name: $('#name').val(),
-				email: $('#email').val(),
-				website: $('#website').val(),
-				comments: $('#comments').val()
-			},
-				function(data){
-					document.getElementById('message').innerHTML = data;
-					$('#message').slideDown('slow');
-					$('#submit').removeAttr('disabled');
-					if(data.match('success') != null) $('#contactform').slideUp('slow');
-					$(window).trigger('resize');
-				}
-			);
-	
-			});
-	
+	$('.accordion > dd.active').show();
+	  
+	$('.accordion > dt > a').click(function() {
+		if( $(this).parent().hasClass('active') ){
+			$(this).parents('.accordion').find('dt').removeClass('active');
+			$(this).parents('.accordion').find('dd').removeClass('active').slideUp();
 			return false;
-	
-		});
-	
+		} else {
+			$(this).parents('.accordion').find('dt').removeClass('active');
+			$(this).parents('.accordion').find('dd').removeClass('active').slideUp();
+			$(this).parent().addClass('active').next().addClass('active').slideDown();
+			return false;
+		}
+	});
+
 });
 /*-----------------------------------------------------------------------------------*/
 /*	header#main
