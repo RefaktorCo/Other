@@ -1,7 +1,9 @@
-1.0.6 (08/11/14)
+1.0.6 (08/21/14)
 	*Modified image field output in several template files.
 	*Updated node paginaiton function to only query published nodes.
 	*Fixed issue in node--portfolio.tpl.php related to image field.
+	*Upated ajax.js so accordion elements will work with the AJAX loader. 
+	*Updated Drupal core in full install.
 	
 1.0.5 (05/14/14)
   *Updated Drupal core in full install.
