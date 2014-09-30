@@ -128,6 +128,52 @@ function other_menu_local_tasks(&$variables) {
 }
 
 /**
+ * Impelements theme_status_messages()
+ */
+function other_status_messages($variables) {
+  $display = $variables['display'];
+  $output = '';
+
+  $status_heading = array(
+    'status' => t('Status message'),
+    'error' => t('Error message'),
+    'warning' => t('Warning message'),
+  );
+  foreach (drupal_get_messages($display) as $type => $messages) {
+    switch ($type) {
+	    case 'status':
+	      $output .= "<div class=\"alert success\">\n";
+	    break;
+	    case 'warning':
+	      $output .= "<div class=\"alert warning\">\n";
+	    break;
+	    case 'error':
+	      $output .= "<div class=\"alert danger\">\n";
+	    break;
+	    default: 
+	      $output .= "<div class=\"messages $type\">\n";
+	    break;
+    }
+    if (!empty($status_heading[$type])) {
+      $output .= '<h2 class="element-invisible">' . $status_heading[$type] . "</h2>\n";
+    }
+    if (count($messages) > 1) {
+      $output .= " <ul>\n";
+      foreach ($messages as $message) {
+        $output .= '  <li>' . $message . "</li>\n";
+      }
+      $output .= " </ul>\n";
+    }
+    else {
+      $output .= $messages[0];
+    }
+    $output .= "</div>\n";
+  }
+  return $output;
+}
+
+
+/**
 * Implements hook_form_contact_site_form_alter().
 */
 function other_form_contact_site_form_alter(&$form, &$form_state, $form_id) {

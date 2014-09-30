@@ -94,6 +94,13 @@ function other_form_system_theme_settings_alter(&$form, &$form_state) {
       '#title' => t('Meta Tags'),
       '#default_value' => theme_get_setting('meta_tags'),
     );
+    
+    // Meta Name
+    $form['options']['meta']['meta_name'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Meta Name'),
+      '#default_value' => theme_get_setting('meta_name'),
+    );
         
   // CSS
   $form['options']['css'] = array(
