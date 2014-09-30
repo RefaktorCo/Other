@@ -2,6 +2,7 @@
   *Fixed issue with portfolio filters not hiding when AJAX content opens.
   *Added theme alert classes to Drupal message wrappers.
   *Added author option to theme post meta settings.
+  *Minor layout/style fixes.
 
 1.0.6 (08/21/14)
 	*Modified image field output in several template files.
