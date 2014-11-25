@@ -1,3 +1,8 @@
+1.0.8 (10/15/14)
+  *Fixed issue regarding comments in portfolio nodes.
+  *Fixed PHP timeout error on unpublished nodes utilizing theme pagination.
+  *Updated Drupal core in full demo install.
+
 1.0.7 (10/01/14)
   *Fixed issue with portfolio filters not hiding when AJAX content opens.
   *Added theme alert classes to Drupal message wrappers.

@@ -17,12 +17,14 @@ $counter = count($slide_items);
 ?>
 
 <div class="article-nav">
-  <?php if ( other_node_pagination($node, 'p') != NULL ) : ?>
-	  <a href="<?php print url('node/' . other_node_pagination($node, 'p'), array('absolute' => TRUE)); ?>" class="post-nav"><i class="icon-angle-left"></i></a>
-	<?php endif; ?>
-	<a href="#" class="close"><i class="icon-angle-right"></i><i class="icon-angle-left"></i></a>
-	<?php if ( other_node_pagination($node, 'n') != NULL ) : ?>
-	  <a href="<?php print url('node/' . other_node_pagination($node, 'n'), array('absolute' => TRUE)); ?>" class="post-nav"><i class="icon-angle-right"></i></a>
+<?php if ($node->status == '1'): ?>
+	  <?php if ( other_node_pagination($node, 'p') != NULL ) : ?>
+		  <a href="<?php print url('node/' . other_node_pagination($node, 'p'), array('absolute' => TRUE)); ?>" class="post-nav"><i class="icon-angle-left"></i></a>
+		<?php endif; ?>
+		<a href="#" class="close"><i class="icon-angle-right"></i><i class="icon-angle-left"></i></a>
+		<?php if ( other_node_pagination($node, 'n') != NULL ) : ?>
+		  <a href="<?php print url('node/' . other_node_pagination($node, 'n'), array('absolute' => TRUE)); ?>" class="post-nav"><i class="icon-angle-right"></i></a>
+		<?php endif; ?>
 	<?php endif; ?>
 </div>
 
@@ -92,5 +94,10 @@ $counter = count($slide_items);
 	
 		
 	<div class="clear"></div><!--CLEAR FLOATS-->
-		
+	<?php if (render($content['comments'])): ?>
+	 <h5 id="comment-title"><?php print $comment_count; ?> <?php print t('Comments'); ?></h5>
+	 <hr>
+	  <?php print render($content['comments']); ?>
+	<?php endif; ?>  
+	
 </article>
