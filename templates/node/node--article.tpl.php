@@ -1,6 +1,6 @@
 <div id="article-wrap">
-	<div class="article-nav blog">
-	  <?php if ($node->status == '1'): ?>
+	<?php if ($node->status == '1'): ?>
+		<div class="article-nav blog">
 		  <?php if ( other_node_pagination($node, 'p') != NULL ) : ?>
 			  <a href="<?php print url('node/' . other_node_pagination($node, 'p'), array('absolute' => TRUE)); ?>" class="post-nav"><i class="icon-angle-left"></i></a>
 			<?php endif; ?>
@@ -8,8 +8,8 @@
 			<?php if ( other_node_pagination($node, 'n') != NULL ) : ?>
 			  <a href="<?php print url('node/' . other_node_pagination($node, 'n'), array('absolute' => TRUE)); ?>" class="post-nav"><i class="icon-angle-right"></i></a>
 			<?php endif; ?>
-		<?php endif; ?>
-	</div>
+		</div>
+	<?php endif; ?>
 	
 	<div class="video-title blog">
 		<h2><?php if ( theme_get_setting('meta_date') == '1' ) : ?><small><?php print format_date($node->created, 'custom', 'M d, Y'); ?></small><?php endif; ?><?php if ( theme_get_setting('meta_title') == '1' ) { echo $title; } ?><?php if ( (render($content['field_tags'])) AND (theme_get_setting('meta_tags')) == '1' ): ?><small><?php print t('Posted In:'); ?> <?php print render($content['field_tags']); ?> <?php if ( theme_get_setting('meta_name') == '1' ) : ?><?php print t('By:'); ?> <?php print $name; ?><?php endif; ?></small><?php endif; ?></h2>
@@ -41,7 +41,7 @@
 	  </div>
 	<?php endif; ?>
 	<?php if (render($content['comments'])): ?>
-	 <h5 id="comment-title"><?php print $comment_count; ?> <?php print t('Comments'); ?></h5>
+	 <h5 id="comment-title"><?php print $comment_count; ?> <?php if ($comment_count; == '1') { print t('Comment'); } else { print t('Comments'); } ?></h5>
 	 <hr>
 	  <?php print render($content['comments']); ?>
 	<?php endif; ?>  
