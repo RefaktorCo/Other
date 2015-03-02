@@ -16,8 +16,8 @@ $img_count = 0;
 $counter = count($slide_items);
 ?>
 
+<div class="article-nav">
 <?php if ($node->status == '1'): ?>
-	<div class="article-nav">
 	  <?php if ( other_node_pagination($node, 'p') != NULL ) : ?>
 		  <a href="<?php print url('node/' . other_node_pagination($node, 'p'), array('absolute' => TRUE)); ?>" class="post-nav"><i class="icon-angle-left"></i></a>
 		<?php endif; ?>
@@ -25,8 +25,8 @@ $counter = count($slide_items);
 		<?php if ( other_node_pagination($node, 'n') != NULL ) : ?>
 		  <a href="<?php print url('node/' . other_node_pagination($node, 'n'), array('absolute' => TRUE)); ?>" class="post-nav"><i class="icon-angle-right"></i></a>
 		<?php endif; ?>
-	</div>
-<?php endif; ?>
+	<?php endif; ?>
+</div>
 
 <?php if (render($content['field_portfolio_video'])): ?>
 <div class="video-container">
